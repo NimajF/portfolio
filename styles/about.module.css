@@ -1,0 +1,65 @@
+.skillsContainer{
+    width: 100%;
+    background-color: aliceblue;
+    padding-top: 3rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.skillsContainer svg{
+    font-size: 3rem;
+    color: rgb(59, 59, 59);
+    margin-bottom: .5rem;
+    transition: .2s ease-in-out;
+}
+.skillsContainer div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.skillsContainer svg:hover{
+    transform: translateY(-5px) scale(1.05);
+}
+
+.icon p{
+    opacity: 0;
+    color: rgb(66, 116, 255);
+    font-weight: 500;
+    transition: .2 ease-in-out;
+}
+
+.icon:hover p{
+    opacity: 1;
+}
+
+.HTML svg{
+    color: #d84924;
+}
+.CSS svg{
+    color: #2071f2;
+}
+.Bootstrap svg {
+    color: #553473;
+}
+.JavaScript svg{
+    color: #ead41c;
+}
+.NodeJS svg{
+    color: #83ba00;
+}
+.Express svg{
+    color: green;
+}
+.MongoDB svg{
+    color: #108b4b;
+}
+.React svg{
+    color: #77d4f2;
+}
+.NextJS svg{
+    color: black;
+}
