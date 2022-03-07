@@ -27,6 +27,7 @@ const projects = [
       <SiNodedotjs />,
     ],
     completed: "false",
+    screenshot: "/Homepage.png"
   },
   {
     name: "Colors App",
@@ -39,6 +40,7 @@ const projects = [
         <SiMaterialui/>
       ],
     completed: "true",
+    screenshot: "/ColorsApp.png"
   },
   {
     name: "React nickname generator",
@@ -49,6 +51,7 @@ const projects = [
         <SiReact />,
       ],
     completed: "true",
+    screenshot: "/ReactNickGen.png"
   },
   {
     name: "Simple React Todo-List",
@@ -61,6 +64,7 @@ const projects = [
         <SiMaterialui/>
       ],
     completed: "true",
+    screenshot: "/ReactTodoList.png"
   },
   {
     name: "DadJokesAPP ",
@@ -71,6 +75,7 @@ const projects = [
         <SiReact />,
       ],
     completed: "true",
+    screenshot: "/DadJokes.png"
   },
   {
     name: "NickGenerator",
@@ -82,6 +87,7 @@ const projects = [
         <SiJavascript />,
       ],
     completed: "true",
+    screenshot: "/NickGen.png"
   },
 ];
 
