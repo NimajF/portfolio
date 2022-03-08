@@ -33,6 +33,7 @@ const projects = [
     name: "Colors App",
     description: "Massive Color App Project",
     repositoryURL: "https://github.com/NimajF/Colors-App",
+    site: "https://nimajf.github.io/Colors-App/",
     skills: [
         <SiCss3 />,
         <SiReact />,
@@ -46,6 +47,7 @@ const projects = [
     name: "React nickname generator",
     description: "A React version of my 1st JS/CSS project.",
     repositoryURL: "https://github.com/NimajF/react-nickgenerator",
+    site: "https://nimajf.github.io/react-nickgenerator/",
     skills: [
         <SiCss3 />,
         <SiReact />,
@@ -58,6 +60,7 @@ const projects = [
     description:
       "A simple TodoList w/ useReducer - LocalStorage - React.memo - Material UI",
     repositoryURL: "https://github.com/NimajF/Simple-React-TodoList",
+    site: "https://nimajf.github.io/Simple-React-TodoList/",
     skills: [
         <SiCss3 />,
         <SiReact />,
@@ -70,6 +73,7 @@ const projects = [
     name: "DadJokesAPP ",
     description: "Pitiful Dad-Jokes APP w/ API",
     repositoryURL: "https://github.com/NimajF/DadJokesAPP",
+    site: "https://nimajf.github.io/DadJokesAPP/",
     skills: [
         <SiCss3 />,
         <SiReact />,
@@ -81,6 +85,7 @@ const projects = [
     name: "NickGenerator",
     description: "A simple nick generator and my very first page!",
     repositoryURL: "https://github.com/NimajF/NickGenerator",
+    site: "https://nimajf.github.io/NickGenerator/",
     skills: [
         <SiHtml5/>,
         <SiCss3 />,
