@@ -1,11 +1,15 @@
 html,
 body {
-  padding: 0;
   margin: 0;
   font-family: "Inter";
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(154, 189, 255);
 }
 
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -17,22 +21,155 @@ a {
 
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   align-items: center;
-  height: 60px;
+  height: 64px;
   padding: 1rem;
-  background-color: rgb(83, 143, 255);
+  background-color: rgb(255, 255, 255);
 }
 
-nav a {
-  color: white;
+nav .nav-links a {
+  color: rgb(122, 122, 122);
   font-size: 1.04rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-left: 1.5rem;
-  border-bottom: 2px solid transparent;
-  transition: 0.2s ease-in-out;
   padding: 2px;
+  transition: 0.2s ease-in-out;
 }
-nav a:hover {
-  border-bottom: 2px solid rgb(194, 216, 255);
+.nav-links a.active{
+  color: rgb(94, 150, 255);
+  font-weight: 500;
 }
+nav .nav-links a:hover {
+  color: rgb(94, 150, 255);
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(249, 249, 249);
+  height: 250px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p:last-child{
+  color: #3f3f3f;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 50%;
+  border-top: 1px solid rgb(206, 206, 206);
+}
+.footer-links .footer-title{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.footer-links ul li {
+  color: #3f3f3f;
+  list-style-type: none;
+  margin-top: 1rem;
+  font-weight: 300;
+  transition: .2s ease-in-out;
+}
+
+.footer-links ul li:hover{
+  color: #000000;
+}
+
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 10rem;
+  width: 100%;
+  background: #ffffff;
+  border-top: 2px solid rgb(103, 155, 253);
+  padding: 1rem 1rem 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.description {
+  width: 70%;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+.projects-container {
+  align-self: center;
+  width: 80%;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 5em;
+}
+
+.container h1 {
+  position: relative;
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-family: "Poppins";
+  top: -7.5rem;
+  background-color: #4284ff;
+  color: #ffffff;
+  width: 30%;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%),
+    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(103, 155, 253);
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 1px 0 rgb(0 0 0 / 10%),
+    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(87, 146, 255);
+}
+
+.container p {
+  color: rgb(44, 44, 44);
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.text h2 {
+  width: 150px;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: #ef4444;
+  padding: 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.link-button {
+  margin-top: 5rem;
+  background-color: white;
+  padding: 1rem;
+  width: 120px;
+  text-align: center;
+  border-radius: 5px;
+  color: rgb(66, 132, 255);
+  border: 1px solid rgb(83, 143, 255);
+  transition: 0.2s ease-in-out;
+}
+.link-button:hover {
+  cursor: pointer;
+  background-color: rgb(83, 143, 255);
+  color: white;
+}
+
