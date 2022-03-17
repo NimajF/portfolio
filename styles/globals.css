@@ -1,8 +1,44 @@
+:root {
+  /* Your default theme */
+  --background: rgb(97, 149, 245);
+  --foreground: black;
+  --navBackground: rgb(109, 160, 255);
+  --containerBackground: rgb(84, 144, 255);
+  --footerBackground: rgb(240, 240, 240);
+  --footerLinks: rgb(63, 63, 63);
+  --h2Color: rgb(255, 255, 255);
+  --textColor: rgb(255, 255, 255);
+  --skillsContainerBackground: rgb(240, 248, 255);
+  --projectCardBackground: rgb(219, 231, 255);
+  --projectContentBackground: #f5f5f5;
+  --projectCardTextColor: rgb(44, 44, 44);
+  --projectCardCodeButton: rgb(255, 198, 66);
+  --projectCardCodeButtonHover: rgb(255, 186, 25);
+}
+
+[data-theme="dark"] {
+  --background: rgb(20, 29, 46);
+  --foreground: white;
+  --navBackground: rgb(29, 43, 70);
+  --containerBackground: rgb(14, 24, 41);
+  --footerBackground: rgb(20, 29, 46);
+  --footerLinks: rgb(139, 149, 167);
+  --h2Color: rgb(241, 241, 241);
+  --textColor: rgb(221, 221, 221);
+  --skillsContainerBackground: rgb(13, 22, 32);
+  --projectCardBackground: rgb(35, 45, 65);
+  --projectContentBackground: rgb(51, 73, 112);
+  --projectCardTextColor: rgb(236, 236, 236);
+  --projectCardCodeButton: rgb(173, 141, 65);
+  --projectCardCodeButtonHover: rgb(206, 153, 31);
+}
+
 html,
 body {
   margin: 0;
   font-family: "Inter";
-  background-color: rgb(154, 189, 255);
+  /* background-color: rgb(154, 189, 255); */
+  background-color: var(--background);
 }
 
 #__next {
@@ -20,33 +56,81 @@ a {
 }
 
 nav {
+  background-color: var(--navBackground);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 64px;
   padding: 1rem;
+  /* border-bottom: 2px solid #76a3f8; */
+}
+
+nav .personal-logo {
+  width: 170px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+nav .personal-logo:hover {
+  cursor: pointer;
+}
+
+nav .personal-logo h4 {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+nav .personal-logo p {
+  color: rgb(253, 219, 67);
+  margin: 0;
+}
+nav .theme-button {
+  background-color: rgb(243, 247, 255);
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+nav .theme-button svg {
+  color: rgb(248, 206, 21);
+  transition: all 0.3s ease-in-out;
+}
+nav .theme-button:hover svg {
+  transform: rotate(20deg);
+}
+nav .theme-button:hover {
   background-color: rgb(255, 255, 255);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 nav .nav-links a {
-  color: rgb(122, 122, 122);
-  font-size: 1.04rem;
-  font-weight: 400;
-  margin-left: 1.5rem;
-  padding: 2px;
-  transition: 0.2s ease-in-out;
-}
-.nav-links a.active{
-  color: rgb(94, 150, 255);
+  color: rgb(250, 250, 250);
   font-weight: 500;
+  font-family: Poppins;
+  margin-left: 1.5rem;
+  transition: 0.2s ease;
+}
+.nav-links a.active {
+  color: white;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(240, 240, 240);
 }
 nav .nav-links a:hover {
-  color: rgb(94, 150, 255);
+  color: white;
 }
 
 footer {
   width: 100%;
-  background-color: rgb(249, 249, 249);
+  background-color: var(--footerBackground);
   height: 250px;
   margin-top: auto;
   display: flex;
@@ -55,7 +139,7 @@ footer {
   align-items: center;
 }
 
-footer p:last-child{
+footer p:last-child {
   color: #3f3f3f;
 }
 
@@ -66,20 +150,20 @@ footer p:last-child{
   width: 50%;
   border-top: 1px solid rgb(206, 206, 206);
 }
-.footer-links .footer-title{
+.footer-links .footer-title {
   font-size: 1.1rem;
   font-weight: 500;
 }
 .footer-links ul li {
-  color: #3f3f3f;
+  color: var(--footerLinks);
   list-style-type: none;
   margin-top: 1rem;
   font-weight: 300;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.footer-links ul li:hover{
-  color: #000000;
+.footer-links ul li:hover {
+  color: rgb(78, 96, 173);
 }
 
 .mainContainer {
@@ -91,60 +175,106 @@ footer p:last-child{
 }
 
 .container {
-  margin-top: 10rem;
+  margin-top: 15rem;
+  margin-bottom: 1rem;
   width: 100%;
-  background: #ffffff;
-  border-top: 2px solid rgb(103, 155, 253);
-  padding: 1rem 1rem 5rem;
+  background: var(--containerBackground);
+  /* border-top-left-radius: 3px;
+  border-top-right-radius: 3px; */
+  border-radius: 3px;
+  /* box-shadow: 15px 15px 0 rgb(128, 172, 255), -15px 15px 0 rgb(128, 172, 255); */
+  padding: 0.5rem 0.5rem 5rem;
   display: flex;
   flex-direction: column;
 }
 .description {
-  width: 70%;
-  margin-left: 10rem;
-  margin-right: 10rem;
-}
-.projects-container {
   align-self: center;
-  width: 80%;
-  border-radius: 5px;
-  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -8rem;
 }
 
-.projects{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-gap: 5em;
+.description .header-info {
+  align-self: center;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+.description .header-info h2 {
+  align-self: center;
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: var(--h2Color);
+}
+.description .header-info span {
+  color: rgb(255, 214, 119);
+  font-weight: bold;
+}
+.description .p-text {
+  align-self: center;
+  color: var(--textColor);
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+/* .projects-container {
+  align-self: center;
+  margin-top: 2rem;
+  width: 70%;
+  border-radius: 5px;
+} */
+/* .projects-container h2 {
+  font-size: 2rem;
+  font-family: Poppins;
+}
+.projects-container p {
+  font-size: 1.5rem;
+  padding-left: 10px;
+} */
+.projects {
+  align-self: center;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 5em; */
+  margin-top: 5rem;
+  padding: 2rem;
 }
 
 .container h1 {
+  align-self: center;
   position: relative;
-  font-size: 5rem;
   text-transform: uppercase;
+  font-size: 7rem;
   font-family: "Poppins";
-  top: -7.5rem;
-  background-color: #4284ff;
-  color: #ffffff;
-  width: 30%;
+  top: -11.5rem;
+  line-height: 90px;
+  margin-left: 2rem;
+  color: rgb(255, 214, 119);
   text-align: center;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%),
+  /* -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%),
     10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(103, 155, 253);
   box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 1px 0 rgb(0 0 0 / 10%),
-    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(87, 146, 255);
+    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(87, 146, 255); */
 }
 
-.container p {
-  color: rgb(44, 44, 44);
-}
 .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
-.text h2 {
+.text h3 {
   width: 150px;
   text-align: center;
   margin-top: 2rem;
@@ -152,10 +282,13 @@ footer p:last-child{
   padding: 1rem;
   border-radius: 5px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: white;
 }
-
+.text p {
+  text-align: center;
+  color: var(--textColor);
+}
 .link-button {
   margin-top: 5rem;
   background-color: white;
@@ -172,4 +305,3 @@ footer p:last-child{
   background-color: rgb(83, 143, 255);
   color: white;
 }
-

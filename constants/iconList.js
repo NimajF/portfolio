@@ -2,6 +2,7 @@ import {
   SiHtml5,
   SiCss3,
   SiBootstrap,
+  SiMaterialui,
   SiJavascript,
   SiExpress,
   SiMongodb,
@@ -18,6 +19,7 @@ export const iconList = [
   { icon: <SiHtml5 />, name: "HTML" },
   { icon: <SiCss3 />, name: "CSS" },
   { icon: <SiBootstrap />, name: "Bootstrap" },
+  { icon: <SiMaterialui />, name: "MaterialUI" },
   { icon: <SiJavascript />, name: "JavaScript" },
   { icon: <SiNodedotjs />, name: "NodeJS" },
   { icon: <SiExpress />, name: "Express" },
@@ -25,7 +27,7 @@ export const iconList = [
   { icon: <SiReact />, name: "React" },
   { icon: <SiNextdotjs />, name: "NextJS" },
   { icon: <SiGit />, name: "Git" },
-  { name: "EJS"  }
+  { name: "EJS" },
 ];
 
 export const socialIcons = [

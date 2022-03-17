@@ -1,6 +1,6 @@
 .projectCard {
   width: 25%;
-  background-color: rgb(219, 231, 255);
+  background-color: var(--projectCardBackground);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,16 +18,15 @@
   transform: scale(1.01);
 }
 .projectContent {
+  background-color: var(--projectContentBackground);
   position: relative;
   width: 100%;
   height: 100%;
   padding: 0 1rem 5rem;
-  border-top: 1px solid rgb(207, 207, 207);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
 }
 .projectCard h2 {
   align-self: center;
@@ -44,7 +43,7 @@
   text-align: center;
   font-family: Poppins;
   font-size: 1.1rem;
-  color: rgb(44, 44, 44);
+  color: var(--projectCardTextColor);
 }
 
 .projectImg {
@@ -62,7 +61,7 @@
   align-self: center;
   display: flex;
   gap: 5px;
-  color: rgb(44, 44, 44);
+  color: var(--projectCardTextColor);
   margin-top: 1rem;
   font-size: 1.4rem;
 }
@@ -126,11 +125,11 @@
 }
 
 .sourceButton {
-  background-color: rgb(255, 198, 66);
+  background-color: var(--projectCardCodeButton);
   cursor: pointer;
 }
 .sourceButton:hover {
-  background-color: rgb(255, 186, 25);
+  background-color: var(--projectCardCodeButtonHover);
 }
 .visitButton {
   margin-left: 1rem;
