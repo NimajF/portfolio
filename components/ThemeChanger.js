@@ -4,7 +4,7 @@ import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("light");
 
   useEffect(() => setMounted(true), []);
 
@@ -12,13 +12,22 @@ const ThemeChanger = () => {
 
   return (
     <div>
-      The current theme is: {theme}
-      <button className="theme-button" onClick={() => setTheme("light")}>
+      {/* The current theme is: {theme} */}
+      {theme === "light" ? (
+        <button className="theme-button" onClick={() => setTheme("dark")}>
+          <BsFillMoonFill />
+        </button>
+      ) : (
+        <button className="theme-button" onClick={() => setTheme("light")}>
+          <BsSunFill />
+        </button>
+      )}
+      {/* <button className="theme-button" onClick={() => setTheme("dark")}>
         <BsFillMoonFill />
-      </button>
-      <button className="theme-button" onClick={() => setTheme("dark")}>
+      </button> */}
+      {/* <button className="theme-button" onClick={() => setTheme("light")}>
         <BsSunFill />
-      </button>
+      </button> */}
       {/* <button onClick={() => setTheme("light")}>Light Mode</button>
       <button onClick={() => setTheme("dark")}>Dark Mode</button> */}
     </div>
