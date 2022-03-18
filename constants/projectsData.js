@@ -39,7 +39,7 @@ const projects = [
     screenshot: "/ColorsApp.png",
   },
   {
-    name: "Porfolio",
+    name: "Portfolio",
     description: "Personal Webpage.",
     repositoryURL: "https://github.com/NimajF/portfolio",
     site: null,
@@ -48,7 +48,22 @@ const projects = [
     screenshot: "/portfolio.png",
   },
   {
-    name: "React nickname generator",
+    name: "YelpCamp",
+    description: "Final Project of The Web Developer Bootcamp 2022.",
+    repositoryURL: "https://github.com/NimajF/YelpCamp",
+    site: "http://aqueous-atoll-10078.herokuapp.com",
+    skills: [
+      <SiJavascript />,
+      <SiBootstrap />,
+      <SiExpress />,
+      <SiMongodb />,
+      <SiNodedotjs />,
+    ],
+    completed: true,
+    screenshot: "/YelpCamp.PNG",
+  },
+  {
+    name: "React NickGenerator",
     description: "A React version of my 1st JS/CSS project.",
     repositoryURL: "https://github.com/NimajF/react-nickgenerator",
     site: "https://nimajf.github.io/react-nickgenerator/",
