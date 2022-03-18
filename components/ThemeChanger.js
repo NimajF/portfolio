@@ -8,7 +8,12 @@ const ThemeChanger = () => {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return null;
+  if (!mounted)
+    return (
+      <div>
+        <button className="theme-button"></button>
+      </div>
+    );
 
   return (
     <div>
