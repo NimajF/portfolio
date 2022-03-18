@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { socialIcons } from "../utils/iconList";
+import { socialIcons } from "../constants/iconList";
 
 const Footer = () => (
   <footer>
