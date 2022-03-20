@@ -11,6 +11,20 @@
   flex-wrap: wrap;
   gap: 2.2rem;
 }
+
+.skillsTitle {
+  background-color: var(--skillsTitle);
+  font-weight: bold;
+  width: 150px;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+
 .skillsContainer svg {
   font-size: 4rem;
   color: rgb(59, 59, 59);
@@ -75,4 +89,10 @@
 }
 .Git svg {
   color: #e84e31;
+}
+
+@media (max-width: 572px) {
+  .skillsContainer {
+    width: 100%;
+  }
 }

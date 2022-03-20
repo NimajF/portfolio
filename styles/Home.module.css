@@ -64,16 +64,72 @@
 
 .homeTitles a {
   margin-top: 2rem;
-  background-color: white;
+  background-color: var(--aboutButton);
   padding: 1rem;
   width: 120px;
   text-align: center;
   border-radius: 5px;
   color: rgb(66, 132, 255);
-  border: 1px solid rgb(83, 143, 255);
-  transition: 0.2s ease-in;
+  /* border: 1px solid rgb(83, 143, 255); */
+  transition: 0.2s ease-in-out;
 }
 .homeTitles a:hover {
-  background-color: rgb(38, 114, 255);
+  background-color: var(--aboutButtonHover);
   color: white;
+}
+
+@media (max-width: 1200px) {
+  .homeContainer {
+    flex-direction: column-reverse;
+  }
+
+  .homeTitles {
+    width: 100%;
+  }
+
+  .homeImage {
+    align-self: center;
+    margin-bottom: -10rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .homeContainer {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .homeTitles {
+    width: 100%;
+  }
+  .homeTitles h1 {
+    align-self: center;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .homeImage {
+    align-self: center;
+    margin-bottom: -5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeTitles h1 {
+    font-size: 2rem;
+  }
+  .homeTitles p {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .homeTitles a {
+    align-self: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .homeTitles h1 {
+    font-size: 1.5rem;
+  }
 }

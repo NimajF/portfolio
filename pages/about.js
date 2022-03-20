@@ -23,7 +23,7 @@ const About = () => {
         </div>
       </div>
       <div className="text">
-        <h3>Skills</h3>
+        <h3 className={styles.skillsTitle}>Skills</h3>
         <p style={{ width: "50%", lineHeight: "1.5rem", fontSize: "1.2rem" }}>
           These are the{" "}
           <span style={{ color: "#eb3434", fontWeight: "bold" }}>skills</span>{" "}

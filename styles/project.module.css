@@ -1,5 +1,6 @@
 .projectCard {
   width: 25%;
+  min-width: 250px;
   background-color: var(--projectCardBackground);
   display: flex;
   flex-direction: column;
@@ -138,4 +139,10 @@
 }
 .visitButton:hover {
   background-color: #2b75ff;
+}
+
+@media (max-width: 768px) {
+  .projectCard {
+    width: 100%;
+  }
 }

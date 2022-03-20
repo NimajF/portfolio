@@ -2,35 +2,46 @@
   /* Your default theme */
   --background: rgb(97, 149, 245);
   --foreground: black;
-  --navBackground: rgb(109, 160, 255);
+  --aboutButton: white;
+  --aboutButtonHover: rgb(255, 198, 66);
+  --navBackground: rgba(109, 160, 255, 0.9);
   --containerBackground: rgb(84, 144, 255);
-  --footerBackground: rgb(240, 240, 240);
+  --footerBackground: rgba(241, 246, 255, 0.9);
   --footerLinks: rgb(63, 63, 63);
+  --footerCR: #3f3f3f;
   --h2Color: rgb(255, 255, 255);
   --textColor: rgb(255, 255, 255);
   --skillsContainerBackground: rgb(240, 248, 255);
+  --skillsTitle: rgb(233, 70, 70);
   --projectCardBackground: rgb(219, 231, 255);
   --projectContentBackground: #f5f5f5;
   --projectCardTextColor: rgb(44, 44, 44);
   --projectCardCodeButton: rgb(255, 198, 66);
   --projectCardCodeButtonHover: rgb(255, 186, 25);
+  --contactDivBackground: white;
 }
 
 [data-theme="dark"] {
   --background: rgb(20, 29, 46);
   --foreground: white;
-  --navBackground: rgb(29, 43, 70);
+  --aboutButton: rgb(38, 55, 90);
+  --aboutButtonHover: rgb(38, 114, 255);
+  --navBackground: rgba(29, 43, 70, 0.9);
   --containerBackground: rgb(14, 24, 41);
   --footerBackground: rgb(20, 29, 46);
   --footerLinks: rgb(139, 149, 167);
+  --footerCR: rgb(48, 58, 83);
   --h2Color: rgb(241, 241, 241);
   --textColor: rgb(221, 221, 221);
   --skillsContainerBackground: rgb(13, 22, 32);
+  --skillsTitle: rgb(194, 65, 65);
   --projectCardBackground: rgb(35, 45, 65);
   --projectContentBackground: rgb(51, 73, 112);
   --projectCardTextColor: rgb(236, 236, 236);
   --projectCardCodeButton: rgb(173, 141, 65);
   --projectCardCodeButtonHover: rgb(206, 153, 31);
+  --contactDivBackground: --navBackground: rgba(29, 43, 70, 0.9);
+  --contactIcons: white;
 }
 
 html,
@@ -39,6 +50,7 @@ body {
   font-family: "Inter";
   /* background-color: rgb(154, 189, 255); */
   background-color: var(--background);
+  transition: 0.2s ease-in-out;
 }
 
 #__next {
@@ -56,15 +68,27 @@ a {
 }
 
 nav {
-  background-color: var(--navBackground);
+  height: 64px;
+  width: 100%;
+  background: var(--navBackground);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 64px;
   padding: 1rem;
   /* border-bottom: 2px solid #76a3f8; */
 }
 
+nav.relative {
+  transition: all 0.2s ease-in-out;
+}
+
+nav.stickyNavbar {
+  position: sticky;
+  background-color: var(--navBackground, 0.1);
+  backdrop-filter: blur(4px);
+  top: 0;
+  z-index: 5;
+}
 nav .personal-logo {
   width: 170px;
   height: 64px;
@@ -140,7 +164,7 @@ footer {
 }
 
 footer p:last-child {
-  color: #3f3f3f;
+  color: var(--footerCR);
 }
 
 .footer-links {
@@ -176,7 +200,6 @@ footer p:last-child {
 
 .container {
   margin-top: 15rem;
-  margin-bottom: 1rem;
   width: 100%;
   background: var(--containerBackground);
   /* border-top-left-radius: 3px;
@@ -274,17 +297,7 @@ footer p:last-child {
   align-items: center;
   margin-top: 2rem;
 }
-.text h3 {
-  width: 150px;
-  text-align: center;
-  margin-top: 2rem;
-  background-color: #ef4444;
-  padding: 1rem;
-  border-radius: 5px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: white;
-}
+
 .text p {
   text-align: center;
   color: var(--textColor);
@@ -304,4 +317,46 @@ footer p:last-child {
   cursor: pointer;
   background-color: rgb(83, 143, 255);
   color: white;
+}
+
+/* @media (max-width: 992px) {
+  .container h1 {
+    font-size: 5rem;
+  }
+} */
+
+@media (max-width: 768px) {
+  nav .personal-logo h4 {
+    font-size: 1rem;
+  }
+  nav .personal-logo p {
+    font-size: 1rem;
+  }
+
+  .container h1 {
+    width: 20;
+    margin: 3rem;
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  .projects {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .description .p-text {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    align-items: center;
+  }
+
+  nav .personal-logo {
+    visibility: hidden;
+    margin: 0;
+    width: 0;
+  }
 }
