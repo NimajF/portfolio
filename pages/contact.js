@@ -13,7 +13,10 @@ const Contact = () => (
     <div className="description">
       <div className="header-info">
         <h2>Let's keep in touch</h2>
-        <p className="p-text">Social media where you can reach me.</p>
+        <p className="p-text">
+          If my profile fits your new project or company, feel free to contact
+          me!
+        </p>
       </div>
     </div>
     <div className={styles.socialIcons}>

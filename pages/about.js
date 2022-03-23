@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import styles from "../styles/about.module.css";
 import { iconList } from "../constants/iconList";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -14,16 +15,33 @@ const About = () => {
         <div className="header-info">
           <h2>Hey, you got here.</h2>
           <p className="p-text">
-            I am an <span> autodidact </span>
-            Front-End developer student. I have a great capacity learning and
-            self-learning, high sense of responsibility and commitment. When
-            faced with a problem, I propose useful solutions and alternatives to
-            continue with the designated task.
+            I am an <span> autodidact </span> argentinian Front-End developer
+            student. I have a great capacity learning and self-learning, high
+            sense of responsibility and commitment.
           </p>
+          <p>
+            When faced with a problem, I propose useful solutions and
+            alternatives to continue with the designated task.
+          </p>
+          <p>
+            At this point, I'm specially waiting to start my Web Development FP
+            (Formación Profesional) in Spain. In addition im studying,
+            developing projects and learning every day.
+          </p>
+          <div className={styles.cvDiv}>
+            <h3>Job Opportunities</h3>
+            <p>
+              I am currently in search for a job to expand and apply my skills.
+              Check out my <b>CV</b>.
+            </p>
+            <Link href="https://drive.google.com/file/d/1saMOt6YJeCrXxokWpztf-EnMmEXNumZe/view?usp=sharing">
+              <button className={styles.cvButton}>CV</button>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="text">
-        <h3 className={styles.skillsTitle}>Skills</h3>
+        <h4 className={styles.skillsTitle}>Skills</h4>
         <p style={{ width: "50%", lineHeight: "1.5rem", fontSize: "1.2rem" }}>
           These are the{" "}
           <span style={{ color: "#eb3434", fontWeight: "bold" }}>skills</span>{" "}

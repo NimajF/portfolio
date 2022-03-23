@@ -32,7 +32,7 @@ export default function Home() {
           <div className={styles.homeImage}>
             <Image
               className={styles.personalImage}
-              src="/IMG_0798.png"
+              src="/IMG_07982.png"
               alt="Picture of the author"
               height={550}
               width={400}

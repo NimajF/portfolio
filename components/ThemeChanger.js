@@ -4,7 +4,7 @@ import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme("light");
+  const { theme, setTheme } = useTheme("dark");
 
   useEffect(() => setMounted(true), []);
 
