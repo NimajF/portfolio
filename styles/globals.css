@@ -3,14 +3,18 @@
   --background: rgb(97, 149, 245);
   --foreground: black;
   --aboutButton: white;
-  --aboutButtonHover: rgb(255, 198, 66);
+  --aboutButtonHover: rgb(255, 190, 39);
   --navBackground: rgba(109, 160, 255, 0.9);
+  --navLinksHover: rgb(255, 255, 255);
   --containerBackground: rgb(84, 144, 255);
   --footerBackground: rgba(241, 246, 255, 0.9);
   --footerLinks: rgb(63, 63, 63);
-  --footerCR: #3f3f3f;
+  --footerCR: rgb(63, 63, 63);
   --h2Color: rgb(255, 255, 255);
-  --textColor: rgb(255, 255, 255);
+  --textColor: rgb(253, 253, 253);
+  --cvButtonBackground: rgb(255, 198, 66);
+  --cvButtonText: rgb(255, 255, 255);
+  --cvButtonHover: rgb(101, 101, 236);
   --skillsContainerBackground: rgb(240, 248, 255);
   --skillsTitle: rgb(233, 70, 70);
   --projectCardBackground: rgb(219, 231, 255);
@@ -27,12 +31,16 @@
   --aboutButton: rgb(38, 55, 90);
   --aboutButtonHover: rgb(38, 114, 255);
   --navBackground: rgba(29, 43, 70, 0.9);
+  --navLinksHover: rgb(99, 143, 246);
   --containerBackground: rgb(14, 24, 41);
   --footerBackground: rgb(20, 29, 46);
   --footerLinks: rgb(139, 149, 167);
   --footerCR: rgb(48, 58, 83);
-  --h2Color: rgb(241, 241, 241);
-  --textColor: rgb(221, 221, 221);
+  --h2Color: rgb(99, 143, 246);
+  --textColor: rgb(238, 238, 238);
+  --cvButtonBackground: rgb(38, 55, 90);
+  --cvButtonText: rgb(66, 132, 255);
+  --cvButtonHover: rgb(38, 114, 255);
   --skillsContainerBackground: rgb(13, 22, 32);
   --skillsTitle: rgb(194, 65, 65);
   --projectCardBackground: rgb(35, 45, 65);
@@ -138,18 +146,18 @@ nav .theme-button:hover {
 
 nav .nav-links a {
   color: rgb(250, 250, 250);
-  font-weight: 500;
+  font-weight: 400;
   font-family: Poppins;
   margin-left: 1.5rem;
   transition: 0.2s ease;
 }
 .nav-links a.active {
-  color: white;
-  font-weight: 600;
-  border-bottom: 2px solid rgb(240, 240, 240);
+  color: var(--navLinksHover);
+  font-weight: 500;
+  border-bottom: 2px solid var(--navLinksHover);
 }
 nav .nav-links a:hover {
-  color: white;
+  color: var(--navLinksHover);
 }
 
 footer {
@@ -215,12 +223,12 @@ footer p:last-child {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: -8rem;
+  margin-top: -12rem;
 }
 
 .description .header-info {
   align-self: center;
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -230,7 +238,7 @@ footer p:last-child {
   align-self: center;
   font-family: Inter;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--h2Color);
 }
 .description .header-info span {
@@ -239,11 +247,17 @@ footer p:last-child {
 }
 .description .p-text {
   align-self: center;
-  color: var(--textColor);
-  line-height: 1.5rem;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 3rem;
 }
+
+.description p:nth-of-type(3), .description p:nth-of-type(2){
+  font-size: 1.5rem;
+  color: var(--textColor);
+}
+
 /* .projects-container {
   align-self: center;
   margin-top: 2rem;
@@ -269,7 +283,7 @@ footer p:last-child {
   /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 5em; */
-  margin-top: 5rem;
+  margin-top: .5rem;
   padding: 2rem;
 }
 
@@ -299,7 +313,6 @@ footer p:last-child {
 }
 
 .text p {
-  text-align: center;
   color: var(--textColor);
 }
 .link-button {
@@ -315,7 +328,7 @@ footer p:last-child {
 }
 .link-button:hover {
   cursor: pointer;
-  background-color: rgb(83, 143, 255);
+  background-color: var(--aboutButtonHover);
   color: white;
 }
 
@@ -333,23 +346,25 @@ footer p:last-child {
     font-size: 1rem;
   }
 
+  .description .header-info{
+    width: 100%;
+  }
+
   .container h1 {
-    width: 20;
+    width: 100%;
     margin: 3rem;
+    margin-top: 6rem;
     text-align: center;
     font-size: 4rem;
   }
 
   .projects {
+    padding: 0;
     width: 100%;
   }
 }
 
 @media (max-width: 576px) {
-  .description .p-text {
-    font-size: 1.1rem;
-  }
-
   nav {
     align-items: center;
   }
@@ -358,5 +373,17 @@ footer p:last-child {
     visibility: hidden;
     margin: 0;
     width: 0;
+  }
+
+  .description{
+    padding: 3rem;
+  }
+
+  .description .p-text {
+    font-size: 1.1rem;
+  }
+
+  .description{
+    width: 100%;
   }
 }

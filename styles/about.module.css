@@ -1,10 +1,38 @@
+.cvButton {
+  background-color: var(--cvButtonBackground);
+  padding: 0.7rem;
+  width: 120px;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  border: transparent;
+  color: var(--cvButtonText);
+  cursor: pointer;
+}
+.cvButton:hover {
+  background-color: var(--aboutButtonHover);
+  color: white;
+}
+
+.cvDiv h3 {
+  font-size: 2rem;
+  color: var(--h2Color);
+  margin-top: 2.5rem;
+}
+
+.cvDiv p {
+  color: white;
+  font-size: 1.1rem;
+}
+
 .skillsContainer {
   width: 50%;
   background-color: var(--skillsContainerBackground);
   padding-top: 4rem;
   border-radius: 5px;
-  border: 2px solid rgb(176, 202, 251);
-  box-shadow: 4px 5px 0 rgb(201, 220, 255);
+  border: 2px solid rgb(96, 117, 156);
+  box-shadow: 4px 5px 0 rgb(71, 91, 129);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +43,13 @@
 .skillsTitle {
   background-color: var(--skillsTitle);
   font-weight: bold;
+  font-size: 2rem;
   width: 150px;
   text-align: center;
-  margin-top: 2rem;
   padding: 1rem;
   border-radius: 5px;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
   color: white;
 }
@@ -92,7 +121,17 @@
 }
 
 @media (max-width: 572px) {
+  .cvDiv {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .cvDiv button {
+    align-self: center;
+  }
   .skillsContainer {
     width: 100%;
+    padding: 1rem;
   }
 }
