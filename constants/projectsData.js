@@ -60,7 +60,7 @@ const projects = [
     site: null,
     skills: [<SiCss3 />, <SiReact />, <SiNextdotjs />],
     completed: false,
-    screenshot: "/portfolio.png",
+    screenshot: "/portfolio.PNG",
   },
   {
     name: "React NickGenerator",
@@ -98,7 +98,7 @@ const projects = [
     site: "https://nimajf.github.io/NickGenerator/",
     skills: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],
     completed: true,
-    screenshot: "/NickGen.png",
+    screenshot: "/NickGen.PNG",
   },
 ];
 
