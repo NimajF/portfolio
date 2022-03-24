@@ -15,7 +15,7 @@ export default function Home() {
         <div className={styles.homeContainer}>
           <div className={styles.homeTitles}>
             <h1>
-              Hey, I'm <b>{`<b>`}</b>
+              Hey, I&apos;m <b>{`<b>`}</b>
               <span>Benjamin</span>
               <b>{`</b>`}</b>
             </h1>

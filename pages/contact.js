@@ -12,7 +12,7 @@ const Contact = () => (
     <h1>Contact me</h1>
     <div className="description">
       <div className="header-info">
-        <h2>Let's keep in touch</h2>
+        <h2>Let&apos;s keep in touch</h2>
         <p className="p-text">
           If my profile fits your new project or company, feel free to contact
           me!

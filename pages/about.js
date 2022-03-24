@@ -24,9 +24,9 @@ const About = () => {
             alternatives to continue with the designated task.
           </p>
           <p>
-            At this point, I'm specially waiting to start my Web Development FP
-            (Formación Profesional) in Spain. In addition im studying,
-            developing projects and learning every day.
+            At this point, I&apos;m specially waiting to start my Web
+            Development FP (Formación Profesional) in Spain. In addition im
+            studying, developing projects and learning every day.
           </p>
           <div className={styles.cvDiv}>
             <h3>Job Opportunities</h3>
