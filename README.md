@@ -1,3 +1,29 @@
+# Portfolio - Personal Web Site
+
+## Perosnal WebPage of my Web Developer career.
+
+This site is made using <b>NextJS</b> and <b>CSS</b>.
+
+Dark & Light theme 🎨!!
+
+
+You can check it out [here](https://benjaminpuricelli.vercel.app).
+
+> Deployed with <b>Vercel</b>
+
+<br></br>
+### Preview
+![image](https://user-images.githubusercontent.com/89944815/160028245-40e35046-8650-40b1-a1f3-3886e90ae242.png)
+![image](https://user-images.githubusercontent.com/89944815/160028254-e75f91a5-7a4b-43ab-a8f4-4af6c622854d.png)
+![image](https://user-images.githubusercontent.com/89944815/160028289-183a0fcf-111a-477e-9167-f54ee6c70e4d.png)
+![image](https://user-images.githubusercontent.com/89944815/160028314-5e0cb6c4-2c84-4f93-878b-900518a0e89e.png)
+![image](https://user-images.githubusercontent.com/89944815/160028337-f8e7cda5-9a7a-450a-a603-0a7f29a794c0.png)
+![image](https://user-images.githubusercontent.com/89944815/160028387-7f7e9e2b-44ee-40d9-b2f3-beadb2e92936.png)
+![image](https://user-images.githubusercontent.com/89944815/160028416-bedd52de-a85b-4b72-a079-6297a70ae90b.png)
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
