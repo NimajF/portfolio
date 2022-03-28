@@ -1,14 +1,20 @@
 import Link from "next/link";
 import styles from "../styles/project.module.css";
+import { motion } from "framer-motion";
+import { item } from "../constants/motionConstants";
 import Image from "next/image";
 const Project = ({ project }) => (
-  <div className={styles.projectCard}>
+  <motion.div className={styles.projectCard} variants={item}>
     <div className={styles.projectImg}>
       <Image
         src={`${project.screenshot}`}
         alt={`${project.screenshot}`}
         height={150}
         width={300}
+        priority={
+          project.screenshot === "/Homepage.png" ||
+          project.screenshot === "/NickGen.PNG"
+        }
       />
       <img />
     </div>
@@ -37,6 +43,6 @@ const Project = ({ project }) => (
         )}
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 export default Project;
