@@ -1,11 +1,15 @@
 import Head from "next/dist/shared/lib/head";
 import SocialIcon from "../components/SocialIcon";
 import Layout from "../components/Layout";
-import { motion } from "framer-motion";
-import { hiddenText } from "../constants/motionConstants";
+import InView from "../components/InView";
 import styles from "../styles/contact.module.css";
 import { socialIcons } from "../constants/iconList";
-import { contactContainer } from "../constants/motionConstants";
+import {
+  hiddenTitle,
+  hiddenSubTitle,
+  hiddenText,
+  container,
+} from "../constants/motionConstants";
 
 const Contact = () => {
   return (
@@ -13,43 +17,23 @@ const Contact = () => {
       <Head>
         <title>Benjamin - Contact</title>
       </Head>
-      <motion.div
-        className="h1-title"
-        initial="hidden"
-        animate="visible"
-        variants={hiddenText}
-      >
+      <InView className="h1-title" variants={hiddenTitle}>
         <h1>Contact Me</h1>
-      </motion.div>
+      </InView>
       <div className="description">
         <div className="header-info">
-          <motion.div
-            initial={{ x: 10, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -300, opacity: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-          >
+          <InView variants={hiddenSubTitle}>
             <h2>Let&apos;s keep in touch</h2>
-          </motion.div>
-          <motion.div
-            initial={{ x: 10, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -300, opacity: 0 }}
-            transition={{ duration: 0.5, delay: 2 }}
-          >
+          </InView>
+          <InView variants={hiddenText}>
             <p className="p-text">
               If my profile fits your new project or company, feel free to
               contact me!
             </p>
-          </motion.div>
+          </InView>
         </div>
       </div>
-      <motion.div
-        className={styles.socialIcons}
-        variants={contactContainer}
-        initial="hidden"
-        animate="visible"
-      >
+      <InView className={styles.socialIcons} variants={container}>
         {socialIcons.map((icon, idx) => (
           <SocialIcon
             key={idx}
@@ -59,7 +43,7 @@ const Contact = () => {
             link={icon.link}
           />
         ))}
-      </motion.div>
+      </InView>
     </Layout>
   );
 };
