@@ -42,7 +42,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              initial={{ x: 300, opacity: 0 }}
+              initial={{ x: 10, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -300, opacity: 0 }}
               transition={{ duration: 0.5, delay: 2 }}
@@ -68,7 +68,7 @@ export default function Home() {
           </div>
           <motion.div
             className={styles.homeImage}
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ x: 10, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
             transition={{ duration: 0.5, delay: 1.5 }}

@@ -2,6 +2,7 @@
   background-color: var(--cvButtonBackground);
   padding: 0.7rem;
   width: 120px;
+  font: inherit;
   font-size: 1.4rem;
   text-align: center;
   letter-spacing: 2px;
@@ -29,6 +30,7 @@
 .skillsContainer {
   width: 50%;
   background-color: var(--skillsContainerBackground);
+  padding: 15px;
   padding-top: 4rem;
   border-radius: 5px;
   border: 2px solid rgb(96, 117, 156);
@@ -41,6 +43,7 @@
 }
 
 .skillsTitle {
+  align-self: center;
   background-color: var(--skillsTitle);
   font-weight: bold;
   font-size: 2rem;
@@ -54,11 +57,19 @@
   color: white;
 }
 
+.skillsText {
+  align-self: center;
+  width: 70%;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+
 .skillsContainer svg {
   font-size: 4rem;
   color: rgb(59, 59, 59);
 }
 .skillsContainer div {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;

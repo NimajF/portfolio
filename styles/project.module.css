@@ -1,4 +1,5 @@
 .projectCard {
+  cursor: pointer;
   width: 25%;
   min-width: 250px;
   background-color: var(--projectCardBackground);
