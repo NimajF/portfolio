@@ -15,6 +15,20 @@ import {
 
 const projects = [
   {
+    name: "Cake Shop",
+    description: "A REAL PROJECT. Cakes and breakfasts Shop",
+    repositoryURL: "https://github.com/NimajF/Cake-Shop",
+    skills: [
+      <SiHtml5 />,
+      <SiCss3 />,
+      <SiJavascript />,
+      <SiMongodb />,
+      <SiNextdotjs />,
+    ],
+    completed: false,
+    screenshot: "/cake.jpg",
+  },
+  {
     name: "Umarket",
     description: "Umarket, my first Full-Stack project!",
     repositoryURL: "https://github.com/NimajF/Umarket",
