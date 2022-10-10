@@ -62,7 +62,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 2.5 }}
             >
               <Link href="/about">
-                <a>About me</a>
+                <button>About me</button>
               </Link>
             </motion.div>
           </div>

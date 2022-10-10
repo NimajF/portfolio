@@ -4,7 +4,7 @@
   --foreground: black;
   --aboutButton: white;
   --aboutButtonHover: rgb(255, 190, 39);
-  --navBackground: rgba(109, 160, 255, 0.9);
+  --navBackground: rgb(123, 169, 255);
   --navLinksHover: rgb(255, 255, 255);
   --containerBackground: rgb(84, 144, 255);
   --footerBackground: rgba(241, 246, 255, 0.9);
@@ -334,15 +334,18 @@ footer p:last-child {
   color: white;
 }
 
-/* @media (max-width: 992px) {
-  .container h1 {
-    font-size: 5rem;
+@media (max-width: 992px) {
+  .description{
+    width: 100%;
   }
-} */
+  .header-info{
+    width: 80% !important;
+  }
+}
 
 @media (max-width: 768px) {
   nav .personal-logo h4 {
-    font-size: 1rem;
+    font-size: .7rem;
   }
   nav .personal-logo p {
     font-size: 1rem;
@@ -351,6 +354,10 @@ footer p:last-child {
 
   .description p{
     font-size: 1rem;
+  }
+  .header-info{
+    width: 100% !important;
+    margin-top: -2.5rem;
   }
 
   .container .h1-title {
@@ -369,14 +376,25 @@ footer p:last-child {
 @media (max-width: 576px) {
   nav {
     align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
   }
 
   nav .personal-logo {
-    visibility: hidden;
+    /* visibility: hidden; */
     margin: 0;
-    width: 0;
+    width: 100px;
   }
   
+  nav .personal-logo p{
+    font-size: 9px;
+  }
+  
+  nav .nav-links a{
+    font-size: 13px;
+    margin-left: 15px;
+  }
+
   .container{
     width: 100%;
   }

@@ -1,7 +1,7 @@
 .cvButton {
   background-color: var(--cvButtonBackground);
   padding: 0.7rem;
-  width: 120px;
+  width: 120px !important;
   font: inherit;
   font-size: 1.4rem;
   text-align: center;
@@ -144,7 +144,7 @@
     margin-bottom: 2rem;
   }
   .cvButton {
-    width: 200px;
+    width: 100% !important;
   }
   .skillsContainer {
     width: 100%;

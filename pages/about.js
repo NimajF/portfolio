@@ -54,9 +54,9 @@ const About = () => {
               </p>
 
               <Link href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing">
-                <a className={styles.cvButton} target="_blank">
+                <button className={styles.cvButton} target="_blank">
                   CV
-                </a>
+                </button>
               </Link>
             </InView>
           </div>

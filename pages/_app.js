@@ -1,5 +1,5 @@
 import { ThemeProvider } from "next-themes";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "../styles/globals.css";
 
 const pageTransition = {
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps, router }) {
       key={router.route}
       initial="pageInitial"
       animate="pageAnimate"
-      variants={pageTransition}
+      // variants={pageTransition}
     >
       <ThemeProvider>
         <Component {...pageProps} />
