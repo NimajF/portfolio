@@ -53,8 +53,10 @@ const About = () => {
                 skills. Check out my <b>CV</b>.
               </p>
 
-              <Link href="https://drive.google.com/file/d/1saMOt6YJeCrXxokWpztf-EnMmEXNumZe/view?usp=sharing">
-                <button className={styles.cvButton}>CV</button>
+              <Link href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing">
+                <a className={styles.cvButton} target="_blank">
+                  CV
+                </a>
               </Link>
             </InView>
           </div>
