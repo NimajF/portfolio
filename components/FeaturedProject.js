@@ -49,6 +49,7 @@ export default function FeaturedProject(props) {
               href={`${project.repositoryURL}`}
               className={styles.featuredSCButton}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Source Code
             </a>
@@ -56,6 +57,7 @@ export default function FeaturedProject(props) {
               <a
                 href={`${project.site}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={styles.featuredVisitButton}
               >
                 Visit

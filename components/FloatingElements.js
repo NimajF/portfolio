@@ -22,14 +22,14 @@ export default function FloatingElements() {
           // "<img>",
           // "<input>",
           // "<label>",
-          <div />,
-          <div />,
-          <div />,
-          <div />,
-          <div />,
-          <div />,
-          <div />,
-          <div />,
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
         ]
       : ["", "", "", "", "", "", "", ""];
 

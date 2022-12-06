@@ -32,6 +32,7 @@ const Project = ({ project }) => {
           <a
             href={`${project.repositoryURL}`}
             target="_blank"
+            rel="noopener noreferrer"
             className={styles.sourceButton}
           >
             Repository
@@ -40,14 +41,15 @@ const Project = ({ project }) => {
             <a
               href={`${project.site}`}
               target="_blank"
+              rel="noopener noreferrer"
               className={styles.visitButton}
             >
               Visit
             </a>
           ) : (
-            <a href="/" className={styles.inProgressButton}>
+            <Link href="/" className={styles.inProgressButton}>
               In progress
-            </a>
+            </Link>
           )}
         </div>
       </div>

@@ -77,6 +77,7 @@ const About = () => {
               <a
                 href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <button className={styles.cvButton}>CV</button>
               </a>
