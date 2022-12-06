@@ -8,6 +8,7 @@ import {
   hiddenTitle,
   hiddenSubTitle,
   hiddenText,
+  contactContainer,
   container,
 } from "../constants/motionConstants";
 
@@ -33,7 +34,7 @@ const Contact = () => {
           </InView>
         </div>
       </div>
-      <InView className={styles.socialIcons} variants={container}>
+      <InView className={styles.socialIcons} variants={contactContainer}>
         {socialIcons.map((icon, idx) => (
           <SocialIcon
             key={idx}
