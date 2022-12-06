@@ -1,55 +1,113 @@
 :root {
   /* Your default theme */
   --background: rgb(97, 149, 245);
+  --gradientBackground: linear-gradient(325deg, rgba(121,166,250,1) 37%, rgba(97,149,245,1) 37.2%);
   --foreground: black;
   --aboutButton: white;
   --aboutButtonHover: rgb(255, 190, 39);
+  --planetBG: rgb(255, 198, 66);
+  --sunMoon: #ffca1e;
+  --sunMoonShadow: 3px 3px 40px rgba(255, 218, 72);
+  --mountain1: sepia(10%);
+  --mountain2: sepia(0%);
   --navBackground: rgb(123, 169, 255);
-  --navLinksHover: rgb(255, 255, 255);
-  --containerBackground: rgb(84, 144, 255);
-  --footerBackground: rgba(241, 246, 255, 0.9);
-  --footerLinks: rgb(63, 63, 63);
-  --footerCR: rgb(63, 63, 63);
+  --navThemeBackground: rgba(248, 248, 248, 0.241);
+  --navLinksHover: #ffffff;
+  --containerBackground: #689dff;
+  --footerBackground: rgb(116, 165, 255);
+  --footerBorder: #feffff;
+  --footerTitles: rgb(255, 255, 255);
+  --footerCR: rgb(48, 58, 83);
+  --footerLinks: rgb(255, 255, 255);
+  --footerLinksHover: rgb(240, 246, 255);
+  --footerCR: rgb(228, 230, 233);
   --h2Color: rgb(255, 255, 255);
+  --h3Color: rgb(253, 208, 102);
   --textColor: rgb(253, 253, 253);
+  --cvTitle: rgb(255, 198, 66);
   --cvButtonBackground: rgb(255, 198, 66);
   --cvButtonText: rgb(255, 255, 255);
   --cvButtonHover: rgb(101, 101, 236);
-  --skillsContainerBackground: rgb(240, 248, 255);
+  --projectTextShadow: 4px 2px 1px rgb(70, 107, 255);
+  --skillsContainerBackground: rgba(255, 255, 255, 0.13);
+  --fakeTabBackground: rgba(80, 80, 80, 0.197);
+  --skillsContainerBorder: 2px solid transparent;
+  --skilssContainerBoxShadow: 0 1px 1px 0 rgba(0,0,0,.3);
   --skillsTitle: rgb(233, 70, 70);
+  --featuredProjectBackground: rgba(255, 255, 255, 0.2);
+  --featuredProjectTitle: linear-gradient(89.97deg, #436ecc 10.84%, #7667ff 102.67%);
+  --text-shadow: -4px 1px 0px rgb(255, 255, 255);
+  --featuredProjectTitleMedia: linear-gradient(89.97deg, #3f58a3 10.84%, #323e80 102.67%);
+  --featuredProjectSkills: #ffffff;
+  --featuredProjectSkillsColor: rgb(65, 97, 202);
+  --featuredProjectsSCButton: #2c3f7b;
+  --featuredProjectVisitButton: rgb(89 129 85);
+  --featuredProjectProgressButton: 1px solid rgb(225, 236, 255) !important;
   --projectCardBackground: rgb(219, 231, 255);
-  --projectContentBackground: #f5f5f5;
+  --projectContentBackground: rgb(245, 245, 245);
   --projectCardTextColor: rgb(44, 44, 44);
   --projectCardCodeButton: rgb(255, 198, 66);
   --projectCardCodeButtonHover: rgb(255, 186, 25);
   --contactDivBackground: white;
+  --contactIcons: rgb(53, 53, 53);
+  --contactSocialDivBackground: rgba(248, 248, 248, 0.1);
+  --glassBorder: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 [data-theme="dark"] {
   --background: rgb(20, 29, 46);
+  --gradientBackground: linear-gradient(325deg, rgb(22, 32, 52) 37%, rgba(20,29,46,1) 37.2%);
   --foreground: white;
   --aboutButton: rgb(38, 55, 90);
   --aboutButtonHover: rgb(38, 114, 255);
-  --navBackground: rgba(29, 43, 70, 0.9);
+  --planetBG: #dcdcdc;
+  --sunMoon: #dcdcdc;
+  --sunMoonShadow: 3px 3px 40px rgba(255, 255, 255, 0.286);
+  --mountain1: contrast(210%);
+  --mountain2: contrast(1250%);
+  --navBackground: rgba(29, 43, 70);
+  --navThemeBackground: rgba(152, 157, 220, 0.1);
   --navLinksHover: rgb(99, 143, 246);
   --containerBackground: rgb(14, 24, 41);
   --footerBackground: rgb(20, 29, 46);
+  --footerBorder: #3b4260;
+  --footerTitles: rgb(225, 225, 225);
   --footerLinks: rgb(139, 149, 167);
+  --footerLinksHover: rgb(78, 96, 173);
   --footerCR: rgb(48, 58, 83);
   --h2Color: rgb(99, 143, 246);
+  --h3Color: rgb(99, 143, 246);
   --textColor: rgb(238, 238, 238);
+  --cvTitle: rgb(99, 143, 246);
   --cvButtonBackground: rgb(38, 55, 90);
   --cvButtonText: rgb(66, 132, 255);
   --cvButtonHover: rgb(38, 114, 255);
-  --skillsContainerBackground: rgb(13, 22, 32);
+  --projectTextShadow: none;
+  --skillsContainerBackground: #39374e33;
+  --fakeTabBackground: rgba(97, 97, 97, 0.185);
+  --skillsContainerBorder: 2px solid rgb(96, 117, 156);
+  --skilssContainerBoxShadow: 10px 10px 0 rgb(31, 42, 64);
   --skillsTitle: rgb(194, 65, 65);
+  --featuredProjectBackground: rgba(86, 81, 135, 0.2);
+  /* --featuredProjectBackground: rgb(47 45 68 / 20%); */
+  --featuredProjectTitle: linear-gradient(89.97deg, #506be2 7.84%, #6b2cc8 102.67%);
+  --text-shadow: none;
+  --featuredProjectTitleMedia: linear-gradient(89.97deg, #638ff6 7.84%, #5847b8 102.67%);
+  --featuredProjectSkills: #0f284b;
+  --featuredProjectSkillsColor: #bdc4ff;
+  --featuredProjectsSCButton: #0f284b;
+  /* --featuredProjectsSCButton: #1b2c4a; */
+  --featuredProjectVisitButton: #436c40;
+  --featuredProjectProgressButton: 1px solid rgb(124, 42, 42) !important;
   --projectCardBackground: rgb(35, 45, 65);
   --projectContentBackground: rgb(51, 73, 112);
   --projectCardTextColor: rgb(236, 236, 236);
   --projectCardCodeButton: rgb(173, 141, 65);
   --projectCardCodeButtonHover: rgb(206, 153, 31);
-  --contactDivBackground: --navBackground: rgba(29, 43, 70, 0.9);
-  --contactIcons: white;
+  --contactDivBackground: rgba(29, 43, 70, 0.9);
+  --contactIcons: rgb(227, 227, 227);
+  --contactSocialDivBackground: rgba(42, 61, 122, 0.1);
+  --glassBorder: 1px solid rgba(44, 44, 94, 0.3);
 }
 
 html,
@@ -58,8 +116,26 @@ body {
   font-family: "Inter";
   /* background-color: rgb(154, 189, 255); */
   background-color: var(--background);
+  /* background: linear-gradient(346deg, rgb(20, 29, 46) 100%, rgb(20, 24, 46) 68%, rgb(20, 29, 46) 10%); */
   transition: 0.2s ease-in-out;
+  /* overflow: hidden; */
+  /* background: rgb(27,39,62); */
+/* background: linear-gradient(325deg, rgba(27,39,62,1) 37%, rgba(20,29,46,1) 37.2%); */
+  /* background: var(--gradientBackground); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+    url('https://images.unsplash.com/photo-1508402476522-c77c2fa4479d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering:pixelated; */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), 
+    url('https://images.unsplash.com/photo-1523633169704-7711b04b349e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1724&q=80');
+    background-size: cover;
+    background-position: center;
+    image-rendering: -webkit-optimize-contrast; */
 }
+
+
 
 #__next {
   display: flex;
@@ -83,6 +159,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   padding: 1rem;
+  z-index: 1000;
   /* border-bottom: 2px solid #76a3f8; */
 }
 
@@ -94,6 +171,7 @@ nav.stickyNavbar {
   position: sticky;
   background-color: var(--navBackground, 0.1);
   backdrop-filter: blur(4px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.096);
   top: 0;
   z-index: 5;
 }
@@ -119,35 +197,52 @@ nav .personal-logo h4 {
 }
 
 nav .personal-logo p {
-  color: rgb(253, 219, 67);
+  font-family: Roboto;
+  color: rgb(255, 218, 52);
   margin: 0;
+  margin-top: -2px;
 }
 nav .theme-button {
-  background-color: rgb(243, 247, 255);
-  width: 35px;
-  height: 35px;
+  background-color: rgb(249, 251, 255);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  border-radius: 50%;
+  border-radius: 3px;
   padding: 10px;
   cursor: pointer;
+  -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 1px 1px 0 rgba(27, 27, 27, 0.1);
+  transition: 0.2s ease-in-out;
+  background: var(--navThemeBackground);
+  border-radius: 10px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: var(--glassBorder);
   transition: all 0.3s ease-in-out;
 }
 nav .theme-button svg {
-  color: rgb(248, 206, 21);
+  align-self: center;
+  color: rgb(255, 223, 78);
+  font-size: 16px;
   transition: all 0.3s ease-in-out;
 }
 nav .theme-button:hover svg {
   transform: rotate(20deg);
 }
 nav .theme-button:hover {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: rgba(149, 186, 255, 0.2)
 }
 
 nav .nav-links a {
   color: rgb(250, 250, 250);
   font-weight: 400;
-  font-family: Poppins;
+  font-family: Roboto;
+  font-size: 1.1;
   margin-left: 1.5rem;
   transition: 0.2s ease;
 }
@@ -180,11 +275,12 @@ footer p:last-child {
   justify-content: center;
   gap: 2rem;
   width: 50%;
-  border-top: 1px solid rgb(206, 206, 206);
+  border-top: 1px solid var(--footerBorder);
 }
 .footer-links .footer-title {
   font-size: 1.1rem;
   font-weight: 500;
+  color: var(--footerTitles);
 }
 .footer-links ul li {
   color: var(--footerLinks);
@@ -195,7 +291,7 @@ footer p:last-child {
 }
 
 .footer-links ul li:hover {
-  color: rgb(78, 96, 173);
+  color: var(--footerLinksHover);
 }
 
 .mainContainer {
@@ -204,6 +300,7 @@ footer p:last-child {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: transparent;
 }
 
 .container {
@@ -214,16 +311,35 @@ footer p:last-child {
   border-top-right-radius: 3px; */
   border-radius: 3px;
   /* box-shadow: 15px 15px 0 rgb(128, 172, 255), -15px 15px 0 rgb(128, 172, 255); */
-  padding: 0.5rem 0.5rem 5rem;
+  /* padding: 0.5rem 0.5rem 5rem; */
   display: flex;
   flex-direction: column;
 }
+.container .h1-title {
+  align-self: center;
+  position: relative;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-family: "Poppins";
+  top: -10.8rem;
+  line-height: 90px;
+  color: rgb(255, 214, 119);
+  text-align: center;
+  /* -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%),
+    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(103, 155, 253);
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 1px 0 rgb(0 0 0 / 10%),
+    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(87, 146, 255); */
+}
+
 .description {
   align-self: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: -12rem;
+  margin-bottom: 3rem;
+  font-family: Roboto;
 }
 
 .description .header-info {
@@ -241,6 +357,16 @@ footer p:last-child {
   font-size: 3.5rem;
   color: var(--h2Color);
 }
+.description .header-info h3{
+  /* text-align: center; */
+  justify-self: flex-start;
+  font-family: Inter;
+  font-size: 4rem;
+  width: 100%;
+  color: var(--h3Color);
+  margin-bottom: 5rem; margin-top: 5rem;
+}
+
 .description .header-info span {
   color: rgb(255, 214, 119);
   font-weight: bold;
@@ -254,8 +380,9 @@ footer p:last-child {
 }
 
 .description p{
-  font-size: 1.5rem;
-  color: var(--textColor);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: white;
 }
 
 /* .projects-container {
@@ -272,38 +399,32 @@ footer p:last-child {
   font-size: 1.5rem;
   padding-left: 10px;
 } */
+
+.featuredProjects{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* .featuredProjects .react-parallax .react-parallax-bgimage{
+  opacity: 0.6;
+} */
+
 .projects {
   align-self: center;
   width: 80%;
   list-style: none;
   display: flex;
+  align-items: fl;
+
   justify-content: center;
-  justify-items: center;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   gap: 30px;
   overflow: hidden;
   /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 5em; */
   margin-top: .5rem;
-  padding: 2rem;
-}
-
-.container .h1-title {
-  align-self: center;
-  position: relative;
-  width: 100%;
-  text-transform: uppercase;
-  font-size: 4rem;
-  font-family: "Poppins";
-  top: -11.5rem;
-  line-height: 90px;
-  color: rgb(255, 214, 119);
-  text-align: center;
-  /* -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%),
-    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(103, 155, 253);
-  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 1px 0 rgb(0 0 0 / 10%),
-    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(87, 146, 255); */
+  /* padding: 2rem; */
 }
 
 .text {
@@ -315,7 +436,7 @@ footer p:last-child {
 }
 
 .text p {
-  color: var(--textColor);
+  color: white;
 }
 .link-button {
   margin-top: 5rem;
@@ -334,6 +455,12 @@ footer p:last-child {
   color: white;
 }
 
+@media (max-width: 1200px){
+  .projects {
+    width: 100%;
+  }
+}
+
 @media (max-width: 992px) {
   .description{
     width: 100%;
@@ -341,14 +468,22 @@ footer p:last-child {
   .header-info{
     width: 80% !important;
   }
+
+  .description .header-info h3{
+    text-align: center;
+  }
+
 }
 
 @media (max-width: 768px) {
+  body{
+    background: var(--background);
+  }
   nav .personal-logo h4 {
-    font-size: .7rem;
+    font-size: .8rem;
   }
   nav .personal-logo p {
-    font-size: 1rem;
+    font-size: .8rem;
   }
 
 
@@ -356,20 +491,27 @@ footer p:last-child {
     font-size: 1rem;
   }
   .header-info{
-    width: 100% !important;
+    width: 90% !important;
     margin-top: -2.5rem;
+  }
+  .description .header-info h3{
+    font-size: 3rem;
   }
 
   .container .h1-title {
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 3rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  .container h3{
+    margin-top: 2rem !important;
   }
 
   .projects {
     padding: 0;
     width: 100%;
+    gap: 10px;
   }
 }
 
@@ -380,6 +522,9 @@ footer p:last-child {
     padding: .5rem;
   }
 
+  nav .personal-logo h4{
+    font-size: .8rem;
+  }
   nav .personal-logo {
     /* visibility: hidden; */
     margin: 0;
@@ -387,35 +532,77 @@ footer p:last-child {
   }
   
   nav .personal-logo p{
-    font-size: 9px;
+    font-size: 10px;
   }
   
   nav .nav-links a{
-    font-size: 13px;
+    font-size: 14px;
     margin-left: 15px;
+  }
+  nav .nav-links a.active{
+    border-bottom: 1px solid var(--navLinksHover);
+  }
+  
+  .footer-links{
+    width: 80%;
+  }
+  .footer-links ul{
+    width: 50%;
+  }
+  
+  .footer-links ul:last-child li{
+    width: 100%;
   }
 
   .container{
     width: 100%;
   }
+  .container .h1-title{
+    font-size: 2rem;
+    margin-bottom: -.5rem;
+    margin-top: 4rem;
+  }
 
   .description{
-    padding: 3rem;
+    padding: 2rem;
   }
   
   .description .header-info{
     width: 100%;
   }
   .description .header-info h2{
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .description .p-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 27px;
+  }
+
+  .description h3{
+    text-align: left !important;
+    width: 100% !important;
+    padding: 0 !important;
+    font-size: 2.3rem !important;
+  }
+
+  .description p{
     font-size: 1.1rem;
-    line-height: normal;
+    line-height: 1.5rem;
   }
 
   .description{
     width: 100%;
   }
+
+  .projects{
+    width: 100%;
+    padding: 0;
+  }
+  /* .projects div
+    max-width: 50%;
+  } */
+
+  
 }

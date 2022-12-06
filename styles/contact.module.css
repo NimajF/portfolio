@@ -10,6 +10,13 @@
   padding: 2rem;
   border-radius: 5px;
   gap: 2rem;
+  background-color: var(--skillsContainerBackground);
+  margin-bottom: 4rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: var(--glassBorder);
 }
 
 .socialDiv {
@@ -22,16 +29,22 @@
   border-radius: 5px;
   border: 1px solid rgb(194, 194, 255);
   cursor: pointer;
+  background-color: var(--contactSocialDivBackground);
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: var(--glassBorder);
   transition: 0.2s ease-in-out;
 }
 
 .socialDiv:hover {
-  border: 1px solid #2074c8;
-  box-shadow: 5px 5px 1px #054483;
+  /* border: 1px solid #638ff6; */
+  box-shadow: 5px 5px 1px #2a3e65;
+  transform: scale(1.5);
 }
 .socialIcons svg {
   font-size: 2rem;
-  color: var(--contactIcon);
+  color: white;
   transition: 0.2s ease-in-out;
 }
 
@@ -45,9 +58,11 @@
 
 .socialDiv p {
   opacity: 1;
-  font-weight: 300;
+  color: white;
+  font-family: Roboto;
+  font-weight: 400;
   z-index: 0;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 /* .socialDiv p.showing {
   transform: translateX(3rem);
@@ -56,7 +71,7 @@
 } */
 .socialDiv p:hover {
   cursor: pointer;
-  color: #0a66c2;
+  color: #2a5c8d;
   font-weight: 400;
   text-decoration: underline;
 }
@@ -82,5 +97,6 @@
 @media (max-width: 572px) {
   .socialIcons {
     width: 100%;
+    margin-top: -5rem;
   }
 }

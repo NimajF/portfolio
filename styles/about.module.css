@@ -18,40 +18,68 @@
 
 .cvDiv h3 {
   font-size: 2rem;
-  color: var(--h2Color);
+  color: var(--cvTitle);
   margin-top: 2.5rem;
-  margin-bottom: 0;
 }
 
 .cvDiv p {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  margin-top: -3rem;
   margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .skillsContainer {
   width: 50%;
   background-color: var(--skillsContainerBackground);
-  padding: 15px;
-  padding-top: 4rem;
-  border-radius: 5px;
-  border: 2px solid rgb(96, 117, 156);
-  box-shadow: 4px 5px 0 rgb(71, 91, 129);
+  /* padding: 15px; */
+  /* padding-top: 4rem; */
+  border: var(--skillsContainerBorder);
+  box-shadow: var(--skilssContainerBoxShadow);
+  /* box-shadow: 4px 5px 0 rgb(71, 91, 129); */
+  margin-bottom: 5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 2.2rem;
+  transition: all .2s ease-in-out;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: var(--glassBorder);
+  overflow: hidden;
+}
+
+.skillsDiv{
+  width: 100%;
+  padding: 15px;
+  padding-top: 4rem;
+  border-radius: 5px;
+  /* border: var(--skillsContainerBorder);
+  box-shadow: var(--skilssContainerBoxShadow); */
+  /* box-shadow: 4px 5px 0 rgb(71, 91, 129); */
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .skillsTitle {
   align-self: center;
   background-color: var(--skillsTitle);
+  font-family: Roboto;
   font-weight: bold;
   font-size: 2rem;
-  width: 150px;
+  width: 180px;
   text-align: center;
-  padding: 1rem;
+  padding: .9rem;
   border-radius: 5px;
   text-transform: uppercase;
   text-align: center;
@@ -61,16 +89,64 @@
 
 .skillsText {
   align-self: center;
-  width: 70%;
+  justify-self: center;
+  width: 60%;
+  min-width: 200px;
+  color: white;
   line-height: 1.5rem;
   font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.headerMacNav{
+  width: 100%;
+  height: 55px;
+  background-color: var(--contactSocialDivBackground);
+  backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  border-bottom: var(--glassBorder);
+  pointer-events: none;
+}
+.menuCircle{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 17px;
+  left: 15px;
+  background-color: rgb(249 96 87);
+  border-radius: 16px;
+  box-shadow: 24px 0 0 0 #f8ce52, 48px 0 0 0 #5fcf65;
+  flex-shrink: 0;
+}
+
+.fakeSearchTab{
+  position: absolute;
+  width: 80%;
+  height: 35px;
+  top: 10px;
+  left: 100px;
+  background-color: var(--fakeTabBackground);
+  border-radius: 16px;
+  /* border: var(--fakeTabBorder); */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fakeSearchTab p{
+  margin-left: 15px;
+  margin-top: .9rem;
+  font-family: Roboto;
+  font-weight: light;
+  color: rgb(241, 241, 241);
 }
 
 .skillsContainer svg {
   font-size: 4rem;
   color: rgb(59, 59, 59);
 }
-.skillsContainer div {
+.skillsDiv div {
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -78,24 +154,31 @@
   align-items: center;
   transition: 0.2s ease-in-out;
 }
-.skillsContainer div:hover {
-  transform: translateY(-5px) scale(1.05);
+
+.skillsDiv svg{
+  transition: .2s ease-in-out;
 }
 
+.skillsDiv div:hover svg{
+  transform: scale(1.17);
+} 
+
 .icon {
-  max-width: 50px;
+  align-self: center;
+  width: 60px;
   height: 100px;
 }
 
 .icon p {
   opacity: 0;
-  color: rgb(49, 104, 255);
-  font-weight: 500;
-  transition: 0.2 ease-in-out;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  transition: 0.1s ease-in-out;
 }
 
 .icon:hover p {
-  font-family: Poppins;
+  font-family: Inter;
   opacity: 1;
 }
 
@@ -133,22 +216,64 @@
   color: #e84e31;
 }
 
+@media (max-width: 992px) { 
+  .skillsContainer{
+    width: 90%;
+  } 
+}
+
+/* @media (max-width: 768px){
+  
+} */
+
 @media (max-width: 572px) {
   .cvDiv {
     align-self: center;
     display: flex;
     flex-direction: column;
+    gap: 60px;
     margin-top: 1rem;
+    margin-bottom: -1rem;
+  }
+  .cvDiv h3{
+    margin-bottom: 1rem !important;
   }
   .cvDiv p{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
   }
   .cvButton {
     width: 100% !important;
   }
   .skillsContainer {
-    width: 100%;
-    padding: 1rem;
+    width: 90%;
+    /* padding: 1rem; 
+    padding-top: 4.5rem;  */
     margin-top: 2rem;
   }
+
+  .skillsTitle{
+    margin-bottom: 20px;
+  }
+
+  .fakeSearchTab{
+    width: 65%;
+  }
+
+  .skillsText{
+    width: 70%;
+    font-size: 1.1rem;
+    align-self: center;
+    justify-self: center;
+    text-align: left;
+  }
+  .icon svg{
+    font-size: 3rem;
+  }
+
+  .icon {
+    max-width: 30px;
+    height: 50px;
+  }
+  
 }
