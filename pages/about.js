@@ -7,9 +7,30 @@ import {
   hiddenSubTitle,
   hiddenText,
 } from "../constants/motionConstants";
+import { motion } from "framer-motion";
 import styles from "../styles/about.module.css";
 import { iconList } from "../constants/iconList";
 import Link from "next/link";
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const About = () => {
   return (
@@ -27,15 +48,15 @@ const About = () => {
           </InView>
           <InView variants={hiddenText}>
             <p className="p-text">
-              I am an <span> autodidact </span> argentinian Front-End developer
+              I am an <span> autodidact </span> argentinian FullStack developer
               student. I have a great capacity learning and self-learning, high
               sense of responsibility and commitment.
             </p>
           </InView>
           <InView variants={hiddenText}>
             <p>
-              When faced with a problem, I propose useful solutions and
-              alternatives to continue with the designated task.
+              When facing problem, I propose useful solutions and alternatives
+              to continue with the designated task.
             </p>
             <p>
               At this point, I&apos;m specially waiting to start my Web
@@ -44,7 +65,7 @@ const About = () => {
             </p>
           </InView>
           <div className={styles.cvDiv}>
-            <InView variants={hiddenTitle}>
+            <InView variants={hiddenText}>
               <h3>Job Opportunities</h3>
             </InView>
             <InView variants={hiddenText}>
@@ -78,14 +99,31 @@ const About = () => {
         </InView>
 
         <InView className={styles.skillsContainer} variants={hiddenTitle}>
-          {iconList
-            .filter((icon) => icon.name !== "EJS")
-            .map((icon, idx) => (
-              <div key={idx} className={`${styles.icon}`}>
-                <span className={`${styles[icon.name]}`}>{icon.icon}</span>
-                <p>{icon.name}</p>
-              </div>
-            ))}
+          <div className={styles.headerMacNav}>
+            <div className={styles.menuCircle} />
+            <div className={styles.fakeSearchTab}>
+              <p>www.skills.com</p>
+            </div>
+          </div>
+          <InView
+            className={styles.skillsDiv}
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            {iconList
+              .filter((icon) => icon.name !== "EJS")
+              .map((icon, idx) => (
+                <motion.div
+                  key={idx}
+                  className={`${styles.icon}`}
+                  variants={item}
+                >
+                  <span className={`${styles[icon.name]}`}>{icon.icon}</span>
+                  <p>{icon.name}</p>
+                </motion.div>
+              ))}
+          </InView>
         </InView>
       </div>
     </Layout>
