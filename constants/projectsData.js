@@ -16,7 +16,9 @@ import {
 const projects = [
   {
     name: "Cake Shop",
-    description: "A REAL PROJECT. Cakes and breakfasts Shop",
+    description:
+      "FullStack e-commerce project. Discover variety of bakery. Generate and customize your order! ",
+    briefDescription: "A REAL PROJECT. Cakes and breakfasts shop",
     repositoryURL: "https://github.com/NimajF/Cake-Shop",
     skills: [
       <SiHtml5 />,
@@ -25,13 +27,17 @@ const projects = [
       <SiMongodb />,
       <SiNextdotjs />,
     ],
+    skillsNames: ["css", "reactjs", "nextjs", "mongodb", "express"],
     completed: false,
-    screenshot: "/cake.jpg",
+    screenshot: "/cakeShop.PNG",
+    responsiveScreenshot: "/ResponsiveCakeProject.png",
   },
   {
     name: "Umarket",
-    description: "Umarket, my first Full-Stack project!",
+    briefDescription:
+      "Umarket, my first Full-Stack project! Please read README file for more information.",
     repositoryURL: "https://github.com/NimajF/Umarket",
+    site: "https://umarket-five.vercel.app",
     skills: [
       <SiHtml5 />,
       <SiCss3 />,
@@ -41,23 +47,30 @@ const projects = [
       <SiMongodb />,
       <SiNodedotjs />,
     ],
-    completed: false,
+    completed: true,
     screenshot: "/Homepage.png",
   },
   {
     name: "Colors App",
-    description: "Massive Color App Project.",
+    description:
+      "A clone of websites like Flat UI Colors and Material UI Colors. Create your own custom palettes and save them. HSL - RGB - RGBA CopyToClipBoard for your projects.",
+    briefDescription: "Massive Color App Project.",
     repositoryURL: "https://github.com/NimajF/Colors-App",
     site: "https://nimajf.github.io/Colors-App/",
     skills: [<SiCss3 />, <SiReact />, <SiReactrouter />, <SiMaterialui />],
+    skillsNames: ["css", "reactjs", "react-router", "material-ui"],
     completed: true,
     screenshot: "/ColorsApp.png",
+    responsiveScreenshot: "/ResponsiveColorsProject.png",
   },
   {
     name: "YelpCamp",
-    description: "Final Project of The Web Developer Bootcamp 2022.",
+    description:
+      "Discover campgrounds all over the world. Create an account, customize and rate others campgrounds!",
+    briefDescription: "Final Project of The Web Developer Bootcamp 2022.",
     repositoryURL: "https://github.com/NimajF/YelpCamp",
     site: "http://aqueous-atoll-10078.herokuapp.com",
+    // https://yelp-camp-sandy.vercel.app
     skills: [
       <SiJavascript />,
       <SiBootstrap />,
@@ -65,21 +78,36 @@ const projects = [
       <SiMongodb />,
       <SiNodedotjs />,
     ],
+    skillsNames: [
+      "html",
+      "css",
+      "bootstrap",
+      "javascript",
+      "nodejs",
+      "mongodb",
+      "express",
+      "heroku",
+    ],
     completed: true,
     screenshot: "/YelpCamp.PNG",
+    responsiveScreenshot: "/ResponsiveYelpCampProject.png",
   },
   {
     name: "Portfolio",
-    description: "Personal Webpage.",
+    description:
+      "My WEB developer portfolio where I show my experience and projects. Always InProgress, always learning.",
+    briefDescription: "Personal Webpage.",
     repositoryURL: "https://github.com/NimajF/portfolio",
     site: null,
     skills: [<SiCss3 />, <SiFramer />, <SiReact />, <SiNextdotjs />],
+    skillsNames: ["css", "reactjs", "nextjs"],
     completed: false,
     screenshot: "/portfolio.PNG",
+    // responsiveScreenshot: "/ResponsiveCakeProject.png",
   },
   {
     name: "React NickGenerator",
-    description: "A React version of my 1st JS/CSS project.",
+    briefDescription: "A React version of my 1st JS/CSS project.",
     repositoryURL: "https://github.com/NimajF/react-nickgenerator",
     site: "https://nimajf.github.io/react-nickgenerator/",
     skills: [<SiCss3 />, <SiReact />],
@@ -88,7 +116,7 @@ const projects = [
   },
   {
     name: "DadJokesAPP ",
-    description: "Pitiful Dad-Jokes APP w/ API.",
+    briefDescription: "Pitiful Dad-Jokes APP w/ API.",
     repositoryURL: "https://github.com/NimajF/DadJokesAPP",
     site: "https://nimajf.github.io/DadJokesAPP/",
     skills: [<SiCss3 />, <SiReact />],
@@ -97,7 +125,7 @@ const projects = [
   },
   {
     name: "Simple React Todo-List",
-    description:
+    briefDescription:
       "A simple TodoList w/ useReducer - LocalStorage - React.memo - Material UI.",
     repositoryURL: "https://github.com/NimajF/Simple-React-TodoList",
     site: "https://nimajf.github.io/Simple-React-TodoList/",
@@ -108,7 +136,7 @@ const projects = [
 
   {
     name: "NickGenerator",
-    description: "A simple nick generator and my very first page!",
+    briefDescription: "A simple nick generator and my very first page!",
     repositoryURL: "https://github.com/NimajF/NickGenerator",
     site: "https://nimajf.github.io/NickGenerator/",
     skills: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],

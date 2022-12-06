@@ -10,19 +10,19 @@ const Project = ({ project }) => {
       <div className={styles.projectImg}>
         <Image
           src={`${project.screenshot}`}
-          alt={`${project.screenshot}`}
+          alt={`Image of ${project.name} Project`}
           height={150}
           width={300}
+          unoptimized={true}
           priority={
             project.screenshot === "/Homepage.png" ||
             project.screenshot === "/NickGen.PNG"
           }
         />
-        <img />
       </div>
       <div className={styles.projectContent}>
         <h2>{project.name}</h2>
-        <p>{project.description}</p>
+        <p>{project.briefDescription}</p>
         <div className={styles.languages}>
           {project.skills.map((icon, idx) => (
             <span key={idx}>{icon}</span>
@@ -30,17 +30,21 @@ const Project = ({ project }) => {
         </div>
         <div className={styles.linkButtons}>
           <Link href={`${project.repositoryURL}`}>
-            <button className={styles.sourceButton}>Source Code</button>
+            <a target="_blank" className={styles.sourceButton}>
+              Repository
+            </a>
           </Link>
           {project.completed ? (
             <Link href={`${project.site}`}>
-              <button className={styles.visitButton}>Visit</button>
+              <a target="_blank" className={styles.visitButton}>
+                Visit
+              </a>
             </Link>
           ) : (
             <Link href="/">
-              <button className={styles.inProgressButton} disabled>
+              <a className={styles.inProgressButton} disabled>
                 In progress
-              </button>
+              </a>
             </Link>
           )}
         </div>
