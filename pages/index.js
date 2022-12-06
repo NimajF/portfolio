@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import FloatingElements from "../components/FloatingElements";
+import FloatingIcon from "../components/FloatingIcon";
 import { motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
@@ -23,9 +25,50 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Benjamin - Junior WEB Developer</title>
+        <title>Benjamin - Web Developer</title>
       </Head>
       <Navbar />
+      {/* <motion.div
+        className={styles.moonSun}
+        initial={{ y: 600, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ x: -300, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 2 }}
+      >
+        <FloatingIcon />
+      </motion.div> */}
+      <FloatingElements />
+      <motion.div
+        className={styles.trees}
+        initial={{ y: 200, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ x: -300, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 2 }}
+      >
+        <Image
+          src={"/m1.png"}
+          // height={"100%"}
+          // width={"100%"}
+          layout="fill"
+          unoptimized={true}
+        />
+      </motion.div>
+      <motion.div
+        className={styles.mountain2}
+        initial={{ y: 200, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ x: -300, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 3 }}
+      >
+        <Image
+          src={"/m2.png"}
+          // height={"100%"}
+          // width={"100%"}
+          layout="fill"
+          unoptimized={true}
+        />
+      </motion.div>
+      <div className={styles.movingBG} />
       <main className={styles.mainContainer}>
         <div className={styles.homeContainer}>
           <div className={styles.homeTitles}>
@@ -34,10 +77,14 @@ export default function Home() {
               animate="visible"
               variants={hiddenText}
             >
-              <h1>
+              {/* <h1>
                 Hey, I&apos;m <b>{`<b>`}</b>
                 <span>Benjamin</span>
                 <b>{`</b>`}</b>
+              </h1> */}
+              <h1>
+                Hey, I&apos;m <br></br>
+                <span>Benjamin</span>
               </h1>
             </motion.div>
 
@@ -73,13 +120,18 @@ export default function Home() {
             exit={{ x: -300, opacity: 0 }}
             transition={{ duration: 0.5, delay: 1.5 }}
           >
+            <div className={styles.headerMacNav}>
+              <div className={styles.menuCircle} />
+            </div>
             <Image
               className={styles.personalImage}
-              src="/IMG_07982.png"
+              src="/logoface.png"
               alt="Picture of the author"
               height={550}
               width={400}
+              unoptimized={true}
             />
+            <span className={styles.planet}></span>
           </motion.div>
         </div>
       </main>
