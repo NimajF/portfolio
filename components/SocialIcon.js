@@ -8,7 +8,7 @@ const SocialIcon = (props) => {
   const { name, icon, linkParam, link } = props;
   const [mouseOver, setMouseEnter] = useState();
   return (
-    <Link href={`${link}`}>
+    <Link href={`${link}`} passHref>
       <a target="_blank">
         <InView
           className={styles.socialDiv}
