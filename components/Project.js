@@ -29,19 +29,19 @@ const Project = ({ project }) => {
           ))}
         </div>
         <div className={styles.linkButtons}>
-          <Link href={`${project.repositoryURL}`}>
+          <Link href={`${project.repositoryURL}`} passHref>
             <a target="_blank" className={styles.sourceButton}>
               Repository
             </a>
           </Link>
           {project.completed ? (
-            <Link href={`${project.site}`}>
+            <Link href={`${project.site}`} passHref>
               <a target="_blank" className={styles.visitButton}>
                 Visit
               </a>
             </Link>
           ) : (
-            <Link href="/">
+            <Link href="/" passHref>
               <a className={styles.inProgressButton} disabled>
                 In progress
               </a>

@@ -52,6 +52,7 @@ export default function Home() {
           // width={"100%"}
           layout="fill"
           unoptimized={true}
+          priority={true}
         />
       </motion.div>
       <motion.div

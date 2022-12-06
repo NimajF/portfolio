@@ -22,7 +22,7 @@ const notFound = () => (
         </h1>
         <h2>This page does not exist.</h2>
         <p className="p-text">Please return back.</p>
-        <Link href="/">
+        <Link href="/" passHref>
           <button
             className="link-button"
             style={{
