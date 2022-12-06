@@ -298,11 +298,11 @@
 .linkButtons {
   margin-bottom: 1.4rem;
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   right: 15px;
   opacity: 0;
-  align-self: flex-end;
-  justify-self: flex-end;
+  /* align-self: flex-end;
+  justify-self: flex-end; */
   transition: 0.2s ease;
 }
 .projectCard:hover .linkButtons {
@@ -310,6 +310,7 @@
 }
 
 .projectCard a {
+  display: inline-block;
   padding: 0.5rem;
   /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); */
   font-family: Roboto;
@@ -327,11 +328,12 @@
   background-color: rgba(0, 0, 0, 0.139);
   /* box-shadow: 0 0 0px 1px rgb(127, 46, 46); */
   color: white;
-  font-family: Inter;
+  font-family: Roboto;
+  font-weight: 300;
   padding: .7rem;
   border-radius: 3px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  /* border: none; */
+  border: none;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   pointer-events: none;

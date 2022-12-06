@@ -47,9 +47,9 @@ const Project = ({ project }) => {
               Visit
             </a>
           ) : (
-            <Link href="/" className={styles.inProgressButton}>
+            <button className={styles.inProgressButton} disabled>
               In progress
-            </Link>
+            </button>
           )}
         </div>
       </div>
