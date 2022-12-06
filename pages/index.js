@@ -47,6 +47,7 @@ export default function Home() {
       >
         <Image
           src={"/m1.png"}
+          alt="Picture of mountain 1"
           // height={"100%"}
           // width={"100%"}
           layout="fill"
@@ -62,6 +63,7 @@ export default function Home() {
       >
         <Image
           src={"/m2.png"}
+          alt="Picture of mountain 2"
           // height={"100%"}
           // width={"100%"}
           layout="fill"

@@ -34,15 +34,15 @@ const Navbar = () => {
       </Link>
       <ThemeChanger />
       <div className="nav-links">
-        <Link href="/about">
+        <Link href="/about" passHref>
           <a className={currentRoute === "/about" ? "active" : ""}>About</a>
         </Link>
-        <Link href="/projects">
+        <Link href="/projects" passHref>
           <a className={currentRoute === "/projects" ? "active" : ""}>
             Projects
           </a>
         </Link>
-        <Link href="/contact">
+        <Link href="/contact" passHref>
           <a className={currentRoute === "/contact" ? "active" : ""}>Contact</a>
         </Link>
       </div>

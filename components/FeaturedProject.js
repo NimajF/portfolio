@@ -45,13 +45,13 @@ export default function FeaturedProject(props) {
             ))}
           </div>
           <div className={styles.featuredLinks}>
-            <Link href={`${project.repositoryURL}`}>
+            <Link href={`${project.repositoryURL}`} passHref>
               <a target="_blank" className={styles.featuredSCButton}>
                 Source Code
               </a>
             </Link>
             {project.completed ? (
-              <Link href={`${project.site}`}>
+              <Link href={`${project.site}`} passHref>
                 <a target="_blank" className={styles.featuredVisitButton}>
                   Visit
                 </a>
