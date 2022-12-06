@@ -74,11 +74,12 @@ const About = () => {
                 skills. Check out my <b>CV</b>.
               </p>
 
-              <Link href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing">
-                <button className={styles.cvButton} target="_blank">
-                  CV
-                </button>
-              </Link>
+              <a
+                href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing"
+                target="_blank"
+              >
+                <button className={styles.cvButton}>CV</button>
+              </a>
             </InView>
           </div>
         </div>

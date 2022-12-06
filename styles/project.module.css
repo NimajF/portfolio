@@ -323,7 +323,6 @@
 }
 
 .inProgressButton {
-  cursor: default;
   margin-left: 1rem;
   background-color: rgba(0, 0, 0, 0.139);
   /* box-shadow: 0 0 0px 1px rgb(127, 46, 46); */
@@ -335,6 +334,8 @@
   /* border: none; */
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  pointer-events: none;
+  cursor: default;
 }
 
 .sourceButton {

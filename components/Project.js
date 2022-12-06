@@ -29,23 +29,25 @@ const Project = ({ project }) => {
           ))}
         </div>
         <div className={styles.linkButtons}>
-          <Link href={`${project.repositoryURL}`} passHref>
-            <a target="_blank" className={styles.sourceButton}>
-              Repository
-            </a>
-          </Link>
+          <a
+            href={`${project.repositoryURL}`}
+            target="_blank"
+            className={styles.sourceButton}
+          >
+            Repository
+          </a>
           {project.completed ? (
-            <Link href={`${project.site}`} passHref>
-              <a target="_blank" className={styles.visitButton}>
-                Visit
-              </a>
-            </Link>
+            <a
+              href={`${project.site}`}
+              target="_blank"
+              className={styles.visitButton}
+            >
+              Visit
+            </a>
           ) : (
-            <Link href="/" passHref>
-              <a className={styles.inProgressButton} disabled>
-                In progress
-              </a>
-            </Link>
+            <a href="/" className={styles.inProgressButton}>
+              In progress
+            </a>
           )}
         </div>
       </div>

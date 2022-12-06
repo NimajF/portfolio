@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className={sticky}>
-      <Link href="/">
+      <Link href="/" passHref>
         <div className="personal-logo">
           <h4>BENJAMIN</h4>
           <p>Front-End Developer</p>
@@ -34,15 +34,15 @@ const Navbar = () => {
       </Link>
       <ThemeChanger />
       <div className="nav-links">
-        <Link href="/about" passHref>
+        <Link href="/about">
           <a className={currentRoute === "/about" ? "active" : ""}>About</a>
         </Link>
-        <Link href="/projects" passHref>
+        <Link href="/projects">
           <a className={currentRoute === "/projects" ? "active" : ""}>
             Projects
           </a>
         </Link>
-        <Link href="/contact" passHref>
+        <Link href="/contact">
           <a className={currentRoute === "/contact" ? "active" : ""}>Contact</a>
         </Link>
       </div>

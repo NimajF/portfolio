@@ -45,19 +45,23 @@ export default function FeaturedProject(props) {
             ))}
           </div>
           <div className={styles.featuredLinks}>
-            <Link href={`${project.repositoryURL}`} passHref>
-              <a target="_blank" className={styles.featuredSCButton}>
-                Source Code
-              </a>
-            </Link>
+            <a
+              href={`${project.repositoryURL}`}
+              className={styles.featuredSCButton}
+              target="_blank"
+            >
+              Source Code
+            </a>
             {project.completed ? (
-              <Link href={`${project.site}`} passHref>
-                <a target="_blank" className={styles.featuredVisitButton}>
-                  Visit
-                </a>
-              </Link>
+              <a
+                href={`${project.site}`}
+                target="_blank"
+                className={styles.featuredVisitButton}
+              >
+                Visit
+              </a>
             ) : (
-              <Link href="/">
+              <Link href="#">
                 <button className={styles.featuredInProgressButton} disabled>
                   In progress
                 </button>
