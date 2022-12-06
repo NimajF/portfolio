@@ -28,11 +28,11 @@ const Footer = () => (
         {socialIcons
           .filter((icon) => icon.name !== "Mail")
           .map((filteredIcon, idx) => (
-            <li key={idx} >
+            <li key={idx}>
               <Link href={`${filteredIcon.link}`}>
-                <a>
+                <a target="_blank">
                   {filteredIcon.icon}
-                    <> </>
+                  <> </>
                   {filteredIcon.name}
                 </a>
               </Link>
