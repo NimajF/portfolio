@@ -350,11 +350,13 @@
 }
 .sourceButton:hover {
   background-color: #384a8a;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   /* background-color: var(--projectCardCodeButtonHover); */
 }
 .visitButton {
   margin-left: 1rem;
+  text-align: center;
+  width: 60px;
   /* background-color: #5d96ff;
   background-color: #494360; */
   color: white;

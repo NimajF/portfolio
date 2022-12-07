@@ -1,19 +1,25 @@
-.cvButton {
+.cvButton, .cvButtonSp {
   background-color: var(--cvButtonBackground);
   padding: 0.7rem;
-  width: 120px !important;
-  font: inherit;
-  font-size: 1.4rem;
+  width: 110px !important;
+  font-family: Roboto;
+  font-size: 1rem;
   text-align: center;
-  letter-spacing: 2px;
-  border-radius: 5px;
-  border: transparent;
-  color: var(--cvButtonText);
+  font-weight: 400;
+  /* letter-spacing: 2px; */
+  border-radius: 2px;
+  border: none;
+  /* box-shadow: 0 0 0 1px var(--cvButtonBackground); */
+  color: white;
   cursor: pointer;
 }
-.cvButton:hover {
-  background-color: var(--aboutButtonHover);
+.cvButton:hover, .cvButtonSp:hover {
+  background-color: var(--cvButtonHover);
   color: white;
+}
+
+.cvButtonSp{
+  margin-left: 15px;
 }
 
 .cvDiv h3 {
@@ -26,7 +32,7 @@
   color: white;
   font-size: 1.3rem;
   margin-top: -3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: 300;
 }
 
@@ -242,8 +248,12 @@
     margin-bottom: 1rem;
     font-size: 1.1rem;
   }
-  .cvButton {
+  .cvButton, .cvButtonSp {
     width: 100% !important;
+    margin-left: 0;
+  }
+  .cvButton{
+    margin-bottom: 10px;
   }
   .skillsContainer {
     width: 90%;

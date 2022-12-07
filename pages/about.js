@@ -71,15 +71,22 @@ const About = () => {
             <InView variants={hiddenText}>
               <p>
                 I am currently in search for a job to expand and apply my
-                skills. Check out my <b>CV</b>.
+                skills. <br></br>Check out my <b>CV</b>.
               </p>
 
+              <a
+                href="https://drive.google.com/file/d/1zkSex_S3sbx2bqI_ITsKgYoo1oeLpSOJ/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={styles.cvButton}>English</button>
+              </a>
               <a
                 href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className={styles.cvButton}>CV</button>
+                <button className={styles.cvButtonSp}>Spanish</button>
               </a>
             </InView>
           </div>

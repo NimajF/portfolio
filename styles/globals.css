@@ -27,7 +27,7 @@
   --cvTitle: rgb(255, 198, 66);
   --cvButtonBackground: rgb(255, 198, 66);
   --cvButtonText: rgb(255, 255, 255);
-  --cvButtonHover: rgb(101, 101, 236);
+  --cvButtonHover: rgb(255, 190, 39);
   --projectTextShadow: 4px 2px 1px rgb(70, 107, 255);
   --skillsContainerBackground: rgba(255, 255, 255, 0.13);
   --fakeTabBackground: rgba(80, 80, 80, 0.197);
@@ -79,9 +79,9 @@
   --h3Color: rgb(99, 143, 246);
   --textColor: rgb(238, 238, 238);
   --cvTitle: rgb(99, 143, 246);
-  --cvButtonBackground: rgb(38, 55, 90);
+  --cvButtonBackground: rgb(38, 114, 255);
   --cvButtonText: rgb(66, 132, 255);
-  --cvButtonHover: rgb(38, 114, 255);
+  --cvButtonHover: rgb(11, 96, 255);
   --projectTextShadow: none;
   --skillsContainerBackground: #39374e33;
   --fakeTabBackground: rgba(97, 97, 97, 0.185);

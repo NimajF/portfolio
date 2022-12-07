@@ -69,7 +69,8 @@ const projects = [
       "Discover campgrounds all over the world. Create an account, customize and rate others campgrounds!",
     briefDescription: "Final Project of The Web Developer Bootcamp 2022.",
     repositoryURL: "https://github.com/NimajF/YelpCamp",
-    site: "http://aqueous-atoll-10078.herokuapp.com",
+    site: "https://yelp-camp-sandy.vercel.app/",
+    // site: "http://aqueous-atoll-10078.herokuapp.com",
     // https://yelp-camp-sandy.vercel.app
     skills: [
       <SiJavascript />,
