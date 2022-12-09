@@ -11,6 +11,7 @@
   --mountain1: sepia(10%);
   --mountain2: sepia(0%);
   --navBackground: rgb(123, 169, 255);
+  --navBackgroundSticky: rgba(123, 169, 255, 0.9);
   --navThemeBackground: rgba(248, 248, 248, 0.241);
   --navLinksHover: #ffffff;
   --containerBackground: #689dff;
@@ -66,6 +67,7 @@
   --mountain1: contrast(210%);
   --mountain2: contrast(1250%);
   --navBackground: rgba(29, 43, 70);
+  --navBackgroundSticky: rgba(29, 43, 70, 0.9);
   --navThemeBackground: rgba(152, 157, 220, 0.1);
   --navLinksHover: rgb(99, 143, 246);
   --containerBackground: rgb(14, 24, 41);
@@ -169,7 +171,7 @@ nav.relative {
 
 nav.stickyNavbar {
   position: sticky;
-  background-color: var(--navBackground, 0.1);
+  background-color: var(--navBackgroundSticky);
   backdrop-filter: blur(4px);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.096);
   top: 0;
