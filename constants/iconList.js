@@ -34,8 +34,8 @@ export const socialIcons = [
   {
     icon: <SiLinkedin />,
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/bfrancisco12/",
-    linkParam: "linkedin.com/in/brancisco12",
+    link: "https://www.linkedin.com/in/benjamin-francisco-puricelli/",
+    linkParam: "linkedin.com/in/benjamin-francisco-puricelli",
   },
   {
     icon: <SiGithub />,
