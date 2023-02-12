@@ -53,7 +53,7 @@
   gap: 2.2rem;
   transition: all .2s ease-in-out;
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.478);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: var(--glassBorder);
@@ -82,8 +82,7 @@
   background-color: var(--skillsTitle);
   font-family: Roboto;
   font-weight: bold;
-  font-size: 2rem;
-  width: 180px;
+  font-size: 3.5rem;
   text-align: center;
   padding: .9rem;
   border-radius: 5px;
@@ -91,6 +90,7 @@
   text-align: center;
   letter-spacing: 2px;
   color: white;
+  margin-top: -3rem;
 }
 
 .skillsText {
@@ -222,6 +222,11 @@
   color: #e84e31;
 }
 
+@media (max-width: 1400px) { 
+  .skillsContainer{
+    width: 60%;
+  } 
+}
 @media (max-width: 992px) { 
   .skillsContainer{
     width: 90%;

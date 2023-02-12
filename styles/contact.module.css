@@ -9,7 +9,7 @@
   justify-content: space-evenly;
   padding: 2rem;
   border-radius: 5px;
-  gap: 2rem;
+  gap: 1.5rem;
   background-color: var(--skillsContainerBackground);
   margin-bottom: 4rem;
   border-radius: 5px;
@@ -17,6 +17,26 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: var(--glassBorder);
+}
+
+.contact{
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -10rem;
+  gap: 20px;
+}
+.contactInfo{
+  width: 20%;
+}
+.contact h2{
+  font-size: 2.5rem;
+  color: var(--h3Color);
+}
+.contact p{
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .socialDiv {
@@ -60,6 +80,7 @@
   opacity: 1;
   color: white;
   font-family: Roboto;
+  font-size: 1rem;
   font-weight: 400;
   z-index: 0;
   transition: 0.1s ease-in-out;
@@ -88,7 +109,24 @@
   color: rgb(236, 92, 92);
 }
 
+@media (max-width: 1400px) {
+  .contact{
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  .contactInfo{
+    width: 100%;
+  }
+  .socialIcons {
+    width: 70%;
+  }
+}
+
 @media (max-width: 1200px) {
+  .contact{
+    width: 90%;
+  }
   .socialIcons {
     width: 70%;
   }
@@ -97,6 +135,6 @@
 @media (max-width: 572px) {
   .socialIcons {
     width: 100%;
-    margin-top: -5rem;
+    /* margin-top: -1rem; */
   }
 }

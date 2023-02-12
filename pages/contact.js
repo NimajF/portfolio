@@ -21,8 +21,8 @@ const Contact = () => {
       <InView className="h1-title" variants={hiddenTitle}>
         <h1>Contact Me</h1>
       </InView>
-      <div className="description">
-        <div className="header-info">
+      <div className={styles.contact}>
+        <div className={styles.contactInfo}>
           <InView variants={hiddenSubTitle}>
             <h2>Let&apos;s keep in touch</h2>
           </InView>
@@ -33,18 +33,18 @@ const Contact = () => {
             </p>
           </InView>
         </div>
+        <InView className={styles.socialIcons} variants={contactContainer}>
+          {socialIcons.map((icon, idx) => (
+            <SocialIcon
+              key={idx}
+              name={icon.name}
+              icon={icon.icon}
+              linkParam={icon.linkParam}
+              link={icon.link}
+            />
+          ))}
+        </InView>
       </div>
-      <InView className={styles.socialIcons} variants={contactContainer}>
-        {socialIcons.map((icon, idx) => (
-          <SocialIcon
-            key={idx}
-            name={icon.name}
-            icon={icon.icon}
-            linkParam={icon.linkParam}
-            link={icon.link}
-          />
-        ))}
-      </InView>
     </Layout>
   );
 };
