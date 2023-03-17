@@ -167,6 +167,7 @@
 
 .skillsDiv div:hover svg{
   transform: scale(1.17);
+  filter: grayscale(0%);
 } 
 
 .icon {
@@ -186,6 +187,10 @@
 .icon:hover p {
   font-family: Inter;
   opacity: 1;
+}
+
+.icon svg{
+  filter: grayscale(100%);
 }
 
 .HTML svg {

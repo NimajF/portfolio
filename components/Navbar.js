@@ -29,7 +29,7 @@ const Navbar = () => {
       <Link href="/" passHref>
         <div className="personal-logo">
           <h4>BENJAMIN</h4>
-          <p>Front-End Developer</p>
+          <p>Full-Stack Developer</p>
         </div>
       </Link>
       <ThemeChanger />
