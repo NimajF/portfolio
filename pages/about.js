@@ -59,9 +59,12 @@ const About = () => {
               to continue with the designated task.
             </p>
             <p>
-              At this point, I&apos;m specially waiting to start my Web
+              At this point, I&apos;m studying Tertiary Degree in Systems
+              Analyst - Analyst Programmer. In addition I&apos;m studying,
+              developing projects and learning every day.
+              {/* At this point, I&apos;m specially waiting to start my Web
               Development FP (Formación Profesional) in Spain. In addition im
-              studying, developing projects and learning every day.
+              studying, developing projects and learning every day. */}
             </p>
           </InView>
           <div className={styles.cvDiv}>

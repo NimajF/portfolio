@@ -226,6 +226,12 @@
 .Git svg {
   color: #e84e31;
 }
+.Python svg{
+  color: rgb(0, 0, 0);
+}
+.Django svg{
+  color: #0b4831;
+}
 
 @media (max-width: 1400px) { 
   .skillsContainer{

@@ -13,6 +13,8 @@ import {
   SiLinkedin,
   SiGithub,
   SiMaildotru,
+  SiPython,
+  SiDjango,
 } from "react-icons/si";
 
 export const iconList = [
@@ -27,6 +29,8 @@ export const iconList = [
   { icon: <SiReact />, name: "React" },
   { icon: <SiNextdotjs />, name: "NextJS" },
   { icon: <SiGit />, name: "Git" },
+  { icon: <SiPython />, name: "Python" },
+  { icon: <SiDjango />, name: "Django" },
   { name: "EJS" },
 ];
 

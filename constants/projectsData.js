@@ -11,11 +11,13 @@ import {
   SiReactrouter,
   SiNextdotjs,
   SiNodedotjs,
+  SiDjango,
+  SiPython,
 } from "react-icons/si";
 
 const projects = [
   {
-    name: "Cake Shop",
+    name: "Dulce Victorina",
     description:
       "FullStack e-commerce project. Discover variety of bakery. Generate and customize your order! ",
     briefDescription: "A REAL PROJECT. Cakes and breakfasts shop",
@@ -32,6 +34,26 @@ const projects = [
     site: "https://dulcevictorina.vercel.app/",
     screenshot: "/cakeShop.PNG",
     responsiveScreenshot: "/ResponsiveCakeProject.png",
+  },
+  {
+    name: "Hay Postre",
+    description:
+      "2nd FullStack e-commerce project. Discover variety of bakery. Generate and customize your order! ",
+    briefDescription:
+      "Cake Shop App for an important bakery (Rosario - Argentina)",
+    repositoryURL: "https://github.com/NimajF/haypostre",
+    skills: [
+      <SiHtml5 />,
+      <SiCss3 />,
+      <SiJavascript />,
+      <SiMongodb />,
+      <SiNextdotjs />,
+    ],
+    skillsNames: ["css", "reactjs", "nextjs", "mongodb", "express"],
+    completed: false,
+    site: "https://haypostre.vercel.app/",
+    screenshot: "/haypostre.PNG",
+    responsiveScreenshot: "/haypostremovil.png",
   },
   {
     name: "Umarket",
@@ -94,6 +116,16 @@ const projects = [
     screenshot: "/YelpCamp.PNG",
     responsiveScreenshot: "/ResponsiveYelpCampProject.png",
   },
+  // {
+  //   name: "Social Job App",
+  //   briefDescription:
+  //     "A Twitter Clone App for Companies. Just like Twitter, but for your company. Post, comment and like posts. Django Test",
+  //   // repositoryURL: "https://github.com/NimajF/YelpCamp",
+  //   // site: "https://yelp-camp-sandy.vercel.app/",
+  //   skills: [<SiJavascript />, <SiCss3 />, <SiPython/>, <SiDjango />],
+  //   completed: false,
+  //   screenshot: "",
+  // },
   {
     name: "Portfolio",
     description:
