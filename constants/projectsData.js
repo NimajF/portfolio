@@ -50,7 +50,7 @@ const projects = [
       <SiNextdotjs />,
     ],
     skillsNames: ["css", "reactjs", "nextjs", "mongodb", "express"],
-    completed: false,
+    completed: true,
     site: "https://haypostre.vercel.app/",
     screenshot: "/haypostre.PNG",
     responsiveScreenshot: "/haypostremovil.png",
