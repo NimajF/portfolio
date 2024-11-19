@@ -11,11 +11,40 @@ import {
   SiReactrouter,
   SiNextdotjs,
   SiNodedotjs,
+  SiTailwindcss,
   SiDjango,
   SiPython,
 } from "react-icons/si";
 
 const projects = [
+  {
+    name: "Coinfolio",
+    description:
+      "Track you inversions, discover brokers and more. Mobile version coming soon (react-native)",
+    briefDescription: "Crypto portfolio tracking App",
+    repositoryURL: "https://github.com/NimajF/coinfolio",
+    skills: [
+      <SiHtml5 />,
+      <SiCss3 />,
+      <SiJavascript />,
+      <SiTailwindcss />,
+      <SiMongodb />,
+      <SiNextdotjs />,
+    ],
+    skillsNames: [
+      "css",
+      "reactjs",
+      "tailwind",
+      "nextjs",
+      "react-native",
+      "expo",
+      "mongodb",
+      "express",
+    ],
+    completed: false,
+    screenshot: "/coinfolio.PNG",
+    responsiveScreenshot: "/coinfolioPhone.png",
+  },
   {
     name: "Dulce Victorina",
     description:
