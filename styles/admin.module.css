@@ -1,0 +1,312 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.loginBox {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.loginBox h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.inputGroup input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loginButton {
+  padding: 0.75rem;
+  background: #eb3434;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.loginButton:hover {
+  background: #d12d2d;
+}
+
+.loginButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.dashboard {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboardHeader h1 {
+  color: #fff;
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.projectForm {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.projectForm h2 {
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.projectForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputGroup label {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitButton {
+  padding: 1rem;
+  background: #eb3434;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background: #d12d2d;
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.success {
+  background: rgba(0, 255, 0, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+/* ...existing code... */
+
+.welcomeText {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.projectsList {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.projectsList h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.projectCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.projectImage {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.projectInfo h3 {
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.projectInfo p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.projectTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.techTag {
+  background: rgba(235, 52, 52, 0.2);
+  color: #eb3434;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.projectLinks a {
+  color: #7e9eff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(126, 158, 255, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.projectLinks a:hover {
+  background: rgba(126, 158, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .dashboard {
+    padding: 1rem;
+  }
+  
+  .dashboardHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .projectForm,
+  .projectsList {
+    padding: 1.5rem;
+  }
+}
+
+/* ...existing code... */

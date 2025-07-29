@@ -49,7 +49,7 @@ const About = () => {
           <InView variants={hiddenText}>
             <p className="p-text">
               I am an <span> autodidact </span> argentinian FullStack developer
-              student. I have a great capacity learning and self-learning, high
+              student currently working at <strong style={{ color: "#7e9eff", fontWeight: "bold"  }} >Redconar</strong> Argentina. I have a great capacity learning and self-learning, high
               sense of responsibility and commitment.
             </p>
           </InView>
@@ -60,8 +60,8 @@ const About = () => {
             </p>
             <p>
               At this point, I&apos;m studying Tertiary Degree in Systems
-              Analyst - Analyst Programmer. In addition I&apos;m studying,
-              developing projects and learning every day.
+              Analyst - Analyst Programmer. 
+              In addition I&apos;m studying, developing projects and learning every day.
               {/* At this point, I&apos;m specially waiting to start my Web
               Development FP (Formación Profesional) in Spain. In addition im
               studying, developing projects and learning every day. */}
