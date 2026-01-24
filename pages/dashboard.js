@@ -46,15 +46,25 @@ const AdminDashboard = () => {
     checkAuth();
   }, [router]);
 
-  const loadProjects = async () => {
+   const loadProjects = async () => {
     try {
-      const response = await fetch('/api/projects/get');
+      const response = await fetch('/api/projects/search');
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      
       if (data.success) {
         setProjects(data.projects);
+        console.log(`✅ Cargados ${data.projects.length} proyectos`);
+      } else {
+        throw new Error(data.message || 'Error al cargar proyectos');
       }
     } catch (error) {
       console.error('Error cargando proyectos:', error);
+      setMessage('Error al cargar proyectos: ' + error.message);
     }
   };
 
@@ -256,9 +266,9 @@ const AdminDashboard = () => {
                     <div className={styles.projectInfo}>
                       <h3>{proj.title}</h3>
                       <p>{proj.description.substring(0, 100)}...</p>
-                      <div className={styles.projectTech}>
-                        {proj.technologies.map((tech, idx) => (
-                          <span key={idx} className={styles.techTag}>{tech}</span>
+                       <div className={styles.projectTech}>
+                        {(Array.isArray(proj.technologies) ? proj.technologies : proj.technologies.split(',')).map((tech, idx) => (
+                          <span key={idx} className={styles.techTag}>{typeof tech === 'string' ? tech.trim() : tech}</span>
                         ))}
                       </div>
                       <div className={styles.projectLinks}>
