@@ -1,100 +1,206 @@
 .socialIcons {
   align-self: center;
-  background-color: var(--contactDivBackground);
-  border: 8px solid rgb(255, 219, 120);
-  width: 30%;
+  width: 35%;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-items: center;
   justify-content: space-evenly;
-  padding: 2rem;
-  border-radius: 5px;
-  gap: 1.5rem;
+  padding: 2.5rem;
+  gap: 1.8rem;
   background-color: var(--skillsContainerBackground);
   margin-bottom: 4rem;
-  border-radius: 5px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: var(--glassBorder);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 500ms ease both;
 }
 
-.contact{
+.socialIcons:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contact {
   align-self: center;
-  width: 100%;
+  width: 90%;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
-  margin-top: -10rem;
-  gap: 20px;
+  align-items: flex-start;
+  margin: -8rem auto 0;
+  gap: 40px;
+  padding: 0 20px;
 }
-.contactInfo{
-  width: 20%;
+
+.contactInfo {
+  width: 30%;
+  min-width: 280px;
 }
-.contact h2{
-  font-size: 2.5rem;
+
+.contact h2 {
+  font-size: 2.8rem;
   color: var(--h3Color);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
 }
-.contact p{
+
+.contact p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 .socialDiv {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid rgb(194, 194, 255);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
   cursor: pointer;
   background-color: var(--contactSocialDivBackground);
-  border-radius: 5px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: var(--glassBorder);
-  transition: 0.2s ease-in-out;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeRight 450ms ease both;
+}
+
+.socialDiv::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 0;
 }
 
 .socialDiv:hover {
-  /* border: 1px solid #638ff6; */
+  transform: translateX(6px);
   box-shadow: 5px 5px 1px #2a3e65;
-  transform: scale(1.5);
+}
+
+.socialDiv:hover::before {
+  transform: translateX(0);
 }
 .socialIcons svg {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
-  transition: 0.2s ease-in-out;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 30px;
+  text-align: center;
 }
 
 .socialIcons div {
   z-index: 1;
+  position: relative;
 }
 
 .socialDiv:hover svg {
-  transform: translateX(5px);
+  transform: scale(1.08) translateX(3px);
 }
 
 .socialDiv p {
   opacity: 1;
   color: white;
-  font-family: Roboto;
-  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
   font-weight: 400;
-  z-index: 0;
-  transition: 0.1s ease-in-out;
-}
-/* .socialDiv p.showing {
-  transform: translateX(3rem);
   z-index: 1;
-  opacity: 1;
-} */
-.socialDiv p:hover {
-  cursor: pointer;
-  color: #2a5c8d;
-  font-weight: 400;
-  text-decoration: underline;
+  transition: color 0.25s ease, transform 0.25s ease;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.socialDiv:hover p {
+  color: white;
+  text-decoration: none;
+}
+
+.socialDiv[data-type="email"] { cursor: pointer; }
+.socialDiv[data-type="email"] p { position: relative; }
+.socialDiv[data-type="email"]:hover p::after { content: none; }
+
+.socialDiv[data-type="email"]:hover p::after { content: none; }
+
+/* Copied state visual feedback (text style) */
+.copiedText {
+  color: #b3e5fc;
+  letter-spacing: 0.2px;
+  animation: copiedPulse 1.5s ease;
+}
+
+@keyframes copiedPulse {
+  0% { opacity: 0; transform: translateY(4px); }
+  15% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: -5rem;
+  }
+  
+  .contactInfo {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+  }
+  
+  .socialIcons {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .contact h2 {
+    font-size: 2.4rem;
+  }
+}
+
+.socialIcons .socialDiv:nth-child(1) { animation-delay: 80ms; }
+.socialIcons .socialDiv:nth-child(2) { animation-delay: 160ms; }
+.socialIcons .socialDiv:nth-child(3) { animation-delay: 240ms; }
+
+/* Keyframes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+  .contact h2 {
+    font-size: 2rem;
+  }
+  
+  .socialDiv p {
+    font-size: 1rem;
+  }
+  
+  .socialIcons {
+    padding: 1.5rem;
+  }
 }
 
 .socialDiv:hover .LinkedIn svg {

@@ -7,7 +7,8 @@ const hiddenTitle = {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: 0.5,
+      delay: 0.1,
+      duration: 0.4,
     },
   },
 };
@@ -21,7 +22,8 @@ const hiddenSubTitle = {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: 1,
+      delay: 0.2,
+      duration: 0.4,
     },
   },
 };
@@ -31,7 +33,7 @@ const hiddenText = {
     opacity: 0,
     x: 100,
   },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 1 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.3 } },
 };
 
 // initial={{ x: 10, opacity: 0 }}
@@ -48,7 +50,8 @@ const container = {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: 1.5,
+      delay: 0.4,
+      duration: 0.5,
     },
   },
 };
@@ -59,10 +62,10 @@ const contactContainer = {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: 1.5,
-      duration: 0.5,
-      delayChildren: 0.3,
-      staggerChildren: 0.5,
+      delay: 0.4,
+      duration: 0.4,
+      delayChildren: 0.1,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -72,7 +75,7 @@ const item = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: 1.5 },
+    transition: { duration: 0.4, delay: 0 },
   },
 };
 
@@ -81,7 +84,7 @@ const hiddenFeaturedInfo = {
     opacity: 0,
     y: 100,
   },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } },
 };
 
 const hiddenFeaturedImage = {
@@ -93,7 +96,8 @@ const hiddenFeaturedImage = {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: 0.5,
+      delay: 0.2,
+      duration: 0.4,
     },
   },
 };
@@ -103,14 +107,86 @@ const hiddenProject = {
     opacity: 0,
     x: 100,
   },
-  visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 2 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } },
 };
 const hiddenProjectLeft = {
   hidden: {
     opacity: 0,
     x: -100,
   },
-  visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 2 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } },
+};
+
+// Featured project animations - slide from sides
+const hiddenFeaturedProjectRight = {
+  hidden: {
+    opacity: 0,
+    x: 150,
+    y: 50,
+  },
+  visible: { 
+    opacity: 1, 
+    x: 0, 
+    y: 0,
+    transition: { 
+      duration: 0.6, 
+      delay: 0.1,
+      ease: [0.4, 0, 0.2, 1]
+    } 
+  },
+};
+
+const hiddenFeaturedProjectLeft = {
+  hidden: {
+    opacity: 0,
+    x: -150,
+    y: 50,
+  },
+  visible: { 
+    opacity: 1, 
+    x: 0, 
+    y: 0,
+    transition: { 
+      duration: 0.6, 
+      delay: 0.1,
+      ease: [0.4, 0, 0.2, 1]
+    } 
+  },
+};
+
+// About page animations
+const hiddenAboutSection = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      duration: 0.5, 
+      delay: 0.1,
+      ease: [0.4, 0, 0.2, 1]
+    } 
+  },
+};
+
+const hiddenSkillsContainer = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+    scale: 0.95,
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    transition: { 
+      duration: 0.6, 
+      delay: 0.2,
+      ease: [0.4, 0, 0.2, 1]
+    } 
+  },
 };
 
 export {
@@ -121,6 +197,8 @@ export {
   hiddenFeaturedImage,
   hiddenProject,
   hiddenProjectLeft,
+  hiddenFeaturedProjectRight,
+  hiddenFeaturedProjectLeft,
   container,
   contactContainer,
   item,
