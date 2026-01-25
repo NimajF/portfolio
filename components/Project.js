@@ -14,10 +14,6 @@ const Project = ({ project }) => {
           height={150}
           width={300}
           unoptimized={true}
-          priority={
-            project.screenshot === "/Homepage.png" ||
-            project.screenshot === "/NickGen.PNG"
-          }
         />
       </div>
       <div className={styles.projectContent}>

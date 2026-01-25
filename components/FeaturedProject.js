@@ -82,10 +82,6 @@ export default function FeaturedProject(props) {
               height={400}
               width={700}
               unoptimized={true}
-              priority={
-                project.screenshot === "/Homepage.png" ||
-                project.screenshot === "/NickGen.PNG"
-              }
             />
           </InView>
         </figure>

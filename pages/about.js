@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../lib/supabase";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import InView from "../components/InView";
@@ -33,6 +34,21 @@ const item = {
 };
 
 const About = () => {
+  const [cvs, setCvs] = useState({ en: '', sp: '' });
+  useEffect(() => {
+    const fetchCVs = async () => {
+      const { data, error } = await supabase
+        .from('cv_data')
+        .select('language, file_url')
+        .in('language', ['en', 'es']);
+      if (!error && data) {
+        const en = data.find(r => r.language === 'en')?.file_url || '';
+        const es = data.find(r => r.language === 'es')?.file_url || '';
+        setCvs({ en:en, es: es });
+      };
+    };
+    fetchCVs();
+  }, []);
   return (
     <Layout>
       <Head>
@@ -49,7 +65,7 @@ const About = () => {
           <InView variants={hiddenText}>
             <p className="p-text">
               I am an <span> autodidact </span> argentinian FullStack developer
-              student currently working at <strong style={{ color: "#7e9eff", fontWeight: "bold"  }} >Redconar</strong> Argentina. I have a great capacity learning and self-learning, high
+              student currently working at <strong style={{ color: "#7e9eff", fontWeight: "bold" }} >Redconar</strong> Argentina. I have a great capacity learning and self-learning, high
               sense of responsibility and commitment.
             </p>
           </InView>
@@ -60,7 +76,7 @@ const About = () => {
             </p>
             <p>
               At this point, I&apos;m studying Tertiary Degree in Systems
-              Analyst - Analyst Programmer. 
+              Analyst - Analyst Programmer.
               In addition I&apos;m studying, developing projects and learning every day.
               {/* At this point, I&apos;m specially waiting to start my Web
               Development FP (Formación Profesional) in Spain. In addition im
@@ -72,20 +88,20 @@ const About = () => {
               <h3>Job Opportunities</h3>
             </InView>
             <InView variants={hiddenText}>
-              <p>
+              <p style={{ marginBottom: 0 }}>
                 I am currently in search for a job to expand and apply my
                 skills. <br></br>Check out my <b>CV</b>.
               </p>
 
               <a
-                href="https://drive.google.com/file/d/1zkSex_S3sbx2bqI_ITsKgYoo1oeLpSOJ/view?usp=sharing"
+                href={cvs.en}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <button className={styles.cvButton}>English</button>
               </a>
               <a
-                href="https://drive.google.com/file/d/1txHOBXFhCAXNYhSbCcDolS54rBFEu-OL/view?usp=sharing"
+                href={cvs.es}
                 target="_blank"
                 rel="noopener noreferrer"
               >

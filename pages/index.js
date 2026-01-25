@@ -51,7 +51,7 @@ export default function Home() {
           alt="Picture of mountain 1"
           // height={"100%"}
           // width={"100%"}
-          layout="fill"
+          fill
           unoptimized={true}
           priority={true}
         />
@@ -68,7 +68,7 @@ export default function Home() {
           alt="Picture of mountain 2"
           // height={"100%"}
           // width={"100%"}
-          layout="fill"
+          fill
           unoptimized={true}
         />
       </motion.div>

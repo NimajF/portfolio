@@ -26,6 +26,7 @@
 }
 .featuredProjectImages img{
   transition: .3s ease-in-out;
+  height: auto;
 }
 .featuredProjectImages span:first-child{
   border-radius: 3px;
@@ -252,6 +253,7 @@
 .projectImg img {
   overflow: hidden;
   transition: .2s ease-in-out;
+  height: auto;
 }
 
 .projectCard:hover img{
@@ -379,6 +381,7 @@
   }
   .featuredProjectImages figure:last-child img{
     height: 250px !important;
+    width: auto;
   }
   .projectCard {
     width: 40%;
@@ -403,6 +406,7 @@
   }
   .featuredProjectImages figure:last-child img{
     height: 270px !important;
+    width: auto;
   }
   .projectCard {
     width: 40%;
