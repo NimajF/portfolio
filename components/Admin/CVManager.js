@@ -7,22 +7,20 @@ export default function CVManager({ lang }) {
     const [cvData, setCvData] = useState({ url: '', exists: false });
     const [uploading, setUploading] = useState(false);
 
-    // 1. Cargar datos del CV al montar el componente
     useEffect(() => {
-        fetchCVData();
+        let isMounted = true;
+        (async () => {
+            const { data } = await supabase
+                .from('cv_data')
+                .select('*')
+                .eq('language', lang)
+                .single();
+            if (isMounted && data) {
+                setCvData({ url: data.file_url, fileName: data.file_path, exists: !!data.file_url });
+            }
+        })();
+        return () => { isMounted = false; };
     }, [lang]);
-
-    const fetchCVData = async () => {
-        const { data, error } = await supabase
-            .from('cv_data')
-            .select('*')
-            .eq('language', lang)
-            .single();
-
-        if (data) {
-            setCvData({ url: data.file_url, fileName: data.file_path, exists: !!data.file_url });
-        }
-    };
 
     const handleEditResume = () => {
         document.getElementById(`resume-upload-${lang}`).click();

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useAuth } from '../context/authContext';
+import { supabase } from '../lib/supabase';
 import CVManager from '../components/Admin/CVManager';
 import Layout from '../components/Layout';
 import styles from '../styles/admin.module.css';
@@ -368,10 +370,13 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     {proj.image ? (
-                      <img
+                      <Image
                         src={proj.image}
                         alt={proj.title}
                         className={styles.projectImage}
+                        width={640}
+                        height={360}
+                        unoptimized
                       />
                     ) : (
                       <div style={{
