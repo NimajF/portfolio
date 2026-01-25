@@ -112,7 +112,7 @@ export default function Home() {
               exit={{ y: -300, opacity: 0 }}
               transition={{ duration: 0.5, delay: 2.5 }}
             >
-              <Link href="/about">
+              <Link href="/about" legacyBehavior>
                 <button>About me</button>
               </Link>
             </motion.div>

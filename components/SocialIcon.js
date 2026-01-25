@@ -47,7 +47,7 @@ const SocialIcon = (props) => {
   }
 
   return (
-    <Link href={`${link}`} passHref>
+    <Link href={`${link}`} passHref legacyBehavior>
       <a target="_blank" rel="noopener noreferrer">
         <InView
           className={styles.socialDiv}

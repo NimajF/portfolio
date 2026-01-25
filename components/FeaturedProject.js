@@ -63,7 +63,7 @@ export default function FeaturedProject(props) {
                 Visit
               </a>
             ) : (
-              <Link href="#">
+              <Link href="#" legacyBehavior>
                 <button className={styles.featuredInProgressButton} disabled>
                   In progress
                 </button>

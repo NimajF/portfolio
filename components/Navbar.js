@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav className={sticky}>
-      <Link href="/" passHref>
+      <Link href="/" passHref legacyBehavior>
         <div className="personal-logo">
           <h4>BENJAMIN</h4>
           <p>Full-Stack Developer</p>
@@ -36,21 +36,21 @@ const Navbar = () => {
       <ThemeChanger />
       <div className="nav-links">
         {isLogged ? (
-          <Link href="/dashboard">
+          <Link href="/dashboard" legacyBehavior>
             <a className={currentRoute === "/dashboard" ? "active" : ""}>
               Dashboard
             </a>
           </Link>
         ) : null}
-        <Link href="/about">
+        <Link href="/about" legacyBehavior>
           <a className={currentRoute === "/about" ? "active" : ""}>About</a>
         </Link>
-        <Link href="/projects">
+        <Link href="/projects" legacyBehavior>
           <a className={currentRoute === "/projects" ? "active" : ""}>
             Projects
           </a>
         </Link>
-        <Link href="/contact">
+        <Link href="/contact" legacyBehavior>
           <a className={currentRoute === "/contact" ? "active" : ""}>Contact</a>
         </Link>
       </div>

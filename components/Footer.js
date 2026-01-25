@@ -7,17 +7,17 @@ const Footer = () => (
       <ul>
         <p className="footer-title">Benjamin</p>
         <li>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a>Home</a>
           </Link>
         </li>
         <li>
-          <Link href="/about">
+          <Link href="/about" legacyBehavior>
             <a>About</a>
           </Link>
         </li>
         <li>
-          <Link href="/projects">
+          <Link href="/projects" legacyBehavior>
             <a>Projects</a>
           </Link>
         </li>
@@ -29,7 +29,7 @@ const Footer = () => (
           .filter((icon) => icon.name !== "Mail")
           .map((filteredIcon, idx) => (
             <li key={idx}>
-              <Link href={`${filteredIcon.link}`}>
+              <Link href={`${filteredIcon.link}`} legacyBehavior>
                 <a target="_blank">
                   {filteredIcon.icon}
                   <> </>
