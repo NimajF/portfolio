@@ -6,24 +6,26 @@ import { item } from "../constants/motionConstants";
 
 const SocialIcon = (props) => {
   const { name, icon, linkParam, link } = props;
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (!copied) return;
+    const t = setTimeout(() => setCopied(false), 1500);
+    return () => clearTimeout(t);
+  }, [copied]);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(linkParam);
+      setCopied(true);
+    } catch (err) {
+      // err
+    }
+  };
+
   const [mouseOver, setMouseEnter] = useState();
+
   if (name === "Mail") {
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = async () => {
-      try {
-        await navigator.clipboard.writeText(linkParam);
-        setCopied(true);
-      } catch (err){
-        // err
-      }
-    };
-
-    useEffect(() => {
-      if (!copied) return;
-      const t = setTimeout(() => setCopied(false), 1500);
-      return () => clearTimeout(t);
-    }, [copied]);
     return (
       <InView
         className={styles.socialDiv}

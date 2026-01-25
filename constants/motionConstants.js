@@ -189,6 +189,38 @@ const hiddenSkillsContainer = {
   },
 };
 
+const mountain = {
+  hidden: {
+    y: 200,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 1,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
+const mountain2 = {
+  hidden: {
+    y: 200,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 1.8,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
 export {
   hiddenTitle,
   hiddenSubTitle,
@@ -202,4 +234,6 @@ export {
   container,
   contactContainer,
   item,
+  mountain,
+  mountain2,
 };

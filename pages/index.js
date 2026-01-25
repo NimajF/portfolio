@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { mountain, mountain2 } from "../constants/motionConstants";
 
 const hiddenText = {
   hidden: {
@@ -40,10 +41,10 @@ export default function Home() {
       <FloatingElements />
       <motion.div
         className={styles.trees}
-        initial={{ y: 200, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ x: -300, opacity: 0 }}
-        transition={{ duration: 0.5, delay: 2 }}
+        variants={mountain}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
       >
         <Image
           src={"/m1.png"}
@@ -57,10 +58,10 @@ export default function Home() {
       </motion.div>
       <motion.div
         className={styles.mountain2}
-        initial={{ y: 200, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ x: -300, opacity: 0 }}
-        transition={{ duration: 0.5, delay: 3 }}
+        variants={mountain2}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
       >
         <Image
           src={"/m2.png"}
@@ -128,10 +129,10 @@ export default function Home() {
             </div>
             <Image
               className={styles.personalImage}
-              src="/logoface.png"
+              src="/logoFaceAvatar.png"
               alt="Picture of the author"
-              height={550}
-              width={400}
+              height={300}
+              width={300}
               unoptimized={true}
             />
             <span className={styles.planet}></span>
