@@ -1,5 +1,6 @@
 import { ThemeProvider } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
+import { AuthProvider } from '../context/authContext';
 import "../styles/globals.css";
 
 const pageTransition = {
@@ -13,16 +14,18 @@ const pageTransition = {
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <motion.div
-      key={router.route}
-      initial="pageInitial"
-      animate="pageAnimate"
-      // variants={pageTransition}
-    >
+    <AuthProvider>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <motion.div
+          key={router.route}
+          initial="pageInitial"
+          animate="pageAnimate"
+          // variants={pageTransition}
+        >
+          <Component {...pageProps} />
+        </motion.div>
       </ThemeProvider>
-    </motion.div>
+    </AuthProvider>
   );
 }
 

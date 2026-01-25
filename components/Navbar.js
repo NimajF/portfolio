@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import ThemeChanger from "./ThemeChanger";
 import Link from "next/link";
+import { useAuth } from "../context/authContext";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState("relative");
-
+  const { isLogged } = useAuth();
   const router = useRouter();
   const currentRoute = router.pathname;
 
@@ -34,6 +35,13 @@ const Navbar = () => {
       </Link>
       <ThemeChanger />
       <div className="nav-links">
+        {isLogged ? (
+          <Link href="/dashboard">
+            <a className={currentRoute === "/dashboard" ? "active" : ""}>
+              Dashboard
+            </a>
+          </Link>
+        ) : null}
         <Link href="/about">
           <a className={currentRoute === "/about" ? "active" : ""}>About</a>
         </Link>
