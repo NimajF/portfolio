@@ -15,7 +15,7 @@ const pageTransition = {
 function MyApp({ Component, pageProps, router }) {
   return (
     <AuthProvider>
-      <ThemeProvider>
+      <ThemeProvider attribute="data-theme" defaultTheme="dark">
         <motion.div
           key={router.route}
           initial="pageInitial"

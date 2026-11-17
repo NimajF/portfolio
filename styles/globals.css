@@ -1,62 +1,5 @@
 :root {
-  /* Your default theme */
-  --background: rgb(97, 149, 245);
-  --gradientBackground: linear-gradient(325deg, rgba(121, 166, 250, 1) 37%, rgba(97, 149, 245, 1) 37.2%);
-  --foreground: black;
-  --aboutButton: white;
-  --aboutButtonHover: rgb(255, 190, 39);
-  --planetBG: rgb(255, 198, 66);
-  --sunMoon: #ffca1e;
-  --sunMoonShadow: 3px 3px 40px rgba(255, 218, 72);
-  --mountain1: sepia(10%);
-  --mountain2: sepia(0%);
-  --navBackground: rgb(123, 169, 255);
-  --navBackgroundSticky: rgba(123, 169, 255, 0.9);
-  --navThemeBackground: rgba(248, 248, 248, 0.241);
-  --navLinksHover: #ffffff;
-  --containerBackground: #689dff;
-  --footerBackground: rgb(116, 165, 255);
-  --footerBorder: #feffff;
-  --footerTitles: rgb(255, 255, 255);
-  --footerCR: rgb(48, 58, 83);
-  --footerLinks: rgb(255, 255, 255);
-  --footerLinksHover: rgb(240, 246, 255);
-  --footerCR: rgb(228, 230, 233);
-  --h2Color: rgb(255, 255, 255);
-  --h3Color: rgb(253, 208, 102);
-  --textColor: rgb(253, 253, 253);
-  --cvTitle: rgb(255, 198, 66);
-  --cvButtonBackground: rgb(255, 198, 66);
-  --cvButtonText: rgb(255, 255, 255);
-  --cvButtonHover: rgb(255, 190, 39);
-  --projectTextShadow: 4px 2px 1px rgb(70, 107, 255);
-  --skillsContainerBackground: rgba(255, 255, 255, 0.13);
-  --fakeTabBackground: rgba(80, 80, 80, 0.3);
-  --textContainer: rgb(72, 128, 218);
-  --skillsContainerBorder: 2px solid transparent;
-  --skilssContainerBoxShadow: 0 1px 1px 0 rgba(0, 0, 0, .3);
-  --skillsTitle: rgb(233, 70, 70);
-  --featuredProjectBackground: rgba(255, 255, 255, 0.2);
-  --featuredProjectTitle: linear-gradient(89.97deg, #436ecc 10.84%, #7667ff 102.67%);
-  --text-shadow: -4px 1px 0px rgb(255, 255, 255);
-  --featuredProjectTitleMedia: linear-gradient(89.97deg, #3f58a3 10.84%, #323e80 102.67%);
-  --featuredProjectSkills: #ffffff;
-  --featuredProjectSkillsColor: rgb(65, 97, 202);
-  --featuredProjectsSCButton: #2c3f7b;
-  --featuredProjectVisitButton: rgb(89 129 85);
-  --featuredProjectProgressButton: 1px solid rgb(225, 236, 255) !important;
-  --projectCardBackground: rgb(219, 231, 255);
-  --projectContentBackground: rgb(245, 245, 245);
-  --projectCardTextColor: rgb(44, 44, 44);
-  --projectCardCodeButton: rgb(255, 198, 66);
-  --projectCardCodeButtonHover: rgb(255, 186, 25);
-  --contactDivBackground: white;
-  --contactIcons: rgb(53, 53, 53);
-  --contactSocialDivBackground: rgba(248, 248, 248, 0.1);
-  --glassBorder: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-[data-theme="dark"] {
+  /* Default = dark (prevents SSR flash when defaultTheme="dark") */
   --background: rgb(20, 29, 46);
   --gradientBackground: linear-gradient(325deg, rgb(22, 32, 52) 37%, rgba(20, 29, 46, 1) 37.2%);
   --foreground: white;
@@ -71,6 +14,8 @@
   --navBackgroundSticky: rgba(29, 43, 70, 0.9);
   --navThemeBackground: rgba(152, 157, 220, 0.1);
   --navLinksHover: rgb(99, 143, 246);
+  --navLinkColor: rgb(250, 250, 250);
+  --navLogoColor: rgb(255, 255, 255);
   --containerBackground: rgb(14, 24, 41);
   --footerBackground: rgb(20, 29, 46);
   --footerBorder: #3b4260;
@@ -93,14 +38,74 @@
   --skilssContainerBoxShadow: 10px 10px 0 rgb(31, 42, 64);
   --skillsTitle: rgb(194, 65, 65);
   --featuredProjectBackground: rgba(86, 81, 135, 0.2);
-  /* --featuredProjectBackground: rgb(47 45 68 / 20%); */
-  --featuredProjectTitle: linear-gradient(89.97deg, #506be2 7.84%, #6b2cc8 102.67%);
+  --featuredProjectTitle: linear-gradient(135deg, #6ea8ff 0%, #8e6dff 52%, #c26cf0 100%);
   --text-shadow: none;
-  --featuredProjectTitleMedia: linear-gradient(89.97deg, #638ff6 7.84%, #5847b8 102.67%);
+  --featuredProjectTitleMedia: linear-gradient(135deg, #7db5ff 0%, #9b7aff 52%, #ce80f5 100%);
   --featuredProjectSkills: #0f284b;
   --featuredProjectSkillsColor: #bdc4ff;
   --featuredProjectsSCButton: #0f284b;
-  /* --featuredProjectsSCButton: #1b2c4a; */
+  --featuredSCButtonColor: rgba(180, 205, 255, 0.95);
+  --featuredProjectVisitButton: #436c40;
+  --featuredProjectProgressButton: 1px solid rgb(124, 42, 42) !important;
+  --projectCardBackground: rgb(35, 45, 65);
+  --projectContentBackground: rgb(51, 73, 112);
+  --projectCardTextColor: rgb(236, 236, 236);
+  --projectCardCodeButton: rgb(173, 141, 65);
+  --projectCardCodeButtonHover: rgb(206, 153, 31);
+  --contactDivBackground: rgba(29, 43, 70, 0.9);
+  --contactIcons: rgb(227, 227, 227);
+  --contactSocialDivBackground: rgba(42, 61, 122, 0.1);
+  --glassBorder: 1px solid rgba(44, 44, 94, 0.3);
+  --phoneFrame: rgb(10, 12, 18);
+  --phoneFrameEdge: rgb(60, 70, 95);
+}
+
+[data-theme="dark"] {
+  --background: rgb(20, 29, 46);
+  --gradientBackground: linear-gradient(325deg, rgb(22, 32, 52) 37%, rgba(20, 29, 46, 1) 37.2%);
+  --foreground: white;
+  --aboutButton: rgb(38, 55, 90);
+  --aboutButtonHover: rgb(38, 114, 255);
+  --planetBG: #dcdcdc;
+  --sunMoon: #dcdcdc;
+  --sunMoonShadow: 3px 3px 40px rgba(255, 255, 255, 0.286);
+  --mountain1: brightness(0.6) contrast(1.2);
+  --mountain2: brightness(0.5) contrast(1.2);
+  --navBackground: rgba(29, 43, 70);
+  --navBackgroundSticky: rgba(29, 43, 70, 0.9);
+  --navThemeBackground: rgba(152, 157, 220, 0.1);
+  --navLinksHover: rgb(99, 143, 246);
+  --navLinkColor: rgb(250, 250, 250);
+  --navLogoColor: rgb(255, 255, 255);
+  --containerBackground: rgb(14, 24, 41);
+  --footerBackground: rgb(20, 29, 46);
+  --footerBorder: #3b4260;
+  --footerTitles: rgb(225, 225, 225);
+  --footerLinks: rgb(139, 149, 167);
+  --footerLinksHover: rgb(78, 96, 173);
+  --footerCR: rgb(48, 58, 83);
+  --h2Color: rgb(99, 143, 246);
+  --h3Color: rgb(99, 143, 246);
+  --textColor: rgb(238, 238, 238);
+  --cvTitle: rgb(99, 143, 246);
+  --cvButtonBackground: rgb(38, 114, 255);
+  --cvButtonText: rgb(66, 132, 255);
+  --cvButtonHover: rgb(11, 96, 255);
+  --projectTextShadow: none;
+  --textContainer: rgb(7, 15, 28);
+  --skillsContainerBackground: #39374e33;
+  --fakeTabBackground: rgba(97, 97, 97, 0.2);
+  --skillsContainerBorder: 2px solid rgb(96, 117, 156);
+  --skilssContainerBoxShadow: 10px 10px 0 rgb(31, 42, 64);
+  --skillsTitle: rgb(194, 65, 65);
+  --featuredProjectBackground: rgba(86, 81, 135, 0.2);
+  --featuredProjectTitle: linear-gradient(135deg, #6ea8ff 0%, #8e6dff 52%, #c26cf0 100%);
+  --text-shadow: none;
+  --featuredProjectTitleMedia: linear-gradient(135deg, #7db5ff 0%, #9b7aff 52%, #ce80f5 100%);
+  --featuredProjectSkills: #0f284b;
+  --featuredProjectSkillsColor: #bdc4ff;
+  --featuredProjectsSCButton: #0f284b;
+  --featuredSCButtonColor: rgba(180, 205, 255, 0.95);
   --featuredProjectVisitButton: #436c40;
   --featuredProjectProgressButton: 1px solid rgb(124, 42, 42) !important;
   --projectCardBackground: rgb(35, 45, 65);
@@ -114,29 +119,83 @@
   --glassBorder: 1px solid rgba(44, 44, 94, 0.3);
 }
 
+[data-theme="light"] {
+  /* Rich medium-blue — same brand language as dark mode, refined and less harsh */
+  --background: rgb(62, 98, 172);
+  --gradientBackground: linear-gradient(325deg, rgb(70, 108, 185) 37%, rgb(62, 98, 172) 37.2%);
+  --foreground: white;
+  --aboutButton: rgb(38, 55, 90);
+  --aboutButtonHover: rgb(255, 190, 39);
+  --planetBG: rgb(255, 198, 66);
+  --sunMoon: #ffca1e;
+  --sunMoonShadow: 3px 3px 40px rgba(255, 218, 72);
+  --mountain1: sepia(5%) brightness(1.08);
+  --mountain2: sepia(0%) brightness(1.04);
+  --navBackground: rgba(70, 108, 188, 0.98);
+  --navBackgroundSticky: rgba(70, 108, 188, 0.95);
+  --navThemeBackground: rgba(255, 255, 255, 0.12);
+  --navLinksHover: rgb(255, 214, 100);
+  --navLinkColor: rgba(228, 240, 255, 0.9);
+  --navLogoColor: rgb(255, 255, 255);
+  --containerBackground: rgb(48, 80, 152);
+  --footerBackground: rgb(42, 72, 138);
+  --footerBorder: rgba(255, 255, 255, 0.18);
+  --footerTitles: rgb(255, 255, 255);
+  --footerLinks: rgba(208, 225, 255, 0.82);
+  --footerLinksHover: rgb(255, 214, 100);
+  --footerCR: rgba(180, 208, 255, 0.6);
+  --h2Color: rgb(255, 255, 255);
+  --h3Color: rgb(253, 208, 102);
+  --textColor: rgba(222, 236, 255, 0.92);
+  --cvTitle: rgb(253, 208, 102);
+  --cvButtonBackground: rgba(255, 255, 255, 0.12);
+  --cvButtonText: rgb(255, 255, 255);
+  --cvButtonHover: rgba(255, 255, 255, 0.22);
+  --projectTextShadow: none;
+  --skillsContainerBackground: rgba(255, 255, 255, 0.08);
+  --fakeTabBackground: rgba(0, 0, 0, 0.12);
+  --textContainer: rgb(46, 76, 145);
+  --skillsContainerBorder: 2px solid rgba(255, 255, 255, 0.16);
+  --skilssContainerBoxShadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+  --skillsTitle: rgb(255, 110, 110);
+  --featuredProjectBackground: rgba(255, 255, 255, 0.07);
+  --featuredProjectTitle: linear-gradient(135deg, #3d6af0 0%, #7040e8 52%, #a83ecb 100%);
+  --text-shadow: none;
+  --featuredProjectTitleMedia: linear-gradient(135deg, #4a78ff 0%, #7e4df5 52%, #bc4fde 100%);
+  --featuredProjectSkills: rgba(255, 255, 255, 0.13);
+  --featuredProjectSkillsColor: rgba(228, 240, 255, 0.95);
+  --featuredProjectsSCButton: rgba(255, 255, 255, 0.09);
+  --featuredSCButtonColor: rgba(222, 236, 255, 0.92);
+  --featuredProjectVisitButton: rgb(48, 108, 58);
+  --featuredProjectProgressButton: 1px solid rgba(255, 255, 255, 0.24) !important;
+  --projectCardBackground: rgba(255, 255, 255, 0.08);
+  --projectContentBackground: rgba(255, 255, 255, 0.04);
+  --projectCardTextColor: rgba(218, 234, 255, 0.9);
+  --projectCardCodeButton: rgba(255, 255, 255, 0.1);
+  --projectCardCodeButtonHover: rgba(255, 255, 255, 0.18);
+  --contactDivBackground: rgba(255, 255, 255, 0.09);
+  --contactIcons: rgba(218, 234, 255, 0.9);
+  --contactSocialDivBackground: rgba(255, 255, 255, 0.05);
+  --glassBorder: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Index page (home): restore original blue sky in light mode */
+html[data-theme="light"]:has(.movingBG) {
+  --background: rgb(97, 149, 245);
+  --navBackground: rgb(123, 169, 255);
+  --navBackgroundSticky: rgba(123, 169, 255, 0.9);
+  --navLinkColor: rgb(250, 250, 250);
+  --navLogoColor: rgb(255, 255, 255);
+  --navLinksHover: #ffffff;
+  --containerBackground: #689dff;
+}
+
 html,
 body {
   margin: 0;
   font-family: "Inter";
-  /* background-color: rgb(154, 189, 255); */
   background-color: var(--background);
-  /* background: linear-gradient(346deg, rgb(20, 29, 46) 100%, rgb(20, 24, 46) 68%, rgb(20, 29, 46) 10%); */
   transition: 0.2s ease-in-out;
-  /* overflow: hidden; */
-  /* background: rgb(27,39,62); */
-  /* background: linear-gradient(325deg, rgba(27,39,62,1) 37%, rgba(20,29,46,1) 37.2%); */
-  /* background: var(--gradientBackground); */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
-    url('https://images.unsplash.com/photo-1508402476522-c77c2fa4479d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-    background-size: cover;
-    background-position: center;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering:pixelated; */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), 
-    url('https://images.unsplash.com/photo-1523633169704-7711b04b349e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1724&q=80');
-    background-size: cover;
-    background-position: center;
-    image-rendering: -webkit-optimize-contrast; */
 }
 
 
@@ -165,7 +224,6 @@ nav {
   align-items: center;
   padding: 1rem;
   z-index: 1000;
-  /* border-bottom: 2px solid #76a3f8; */
 }
 
 nav.relative {
@@ -198,7 +256,7 @@ nav .personal-logo:hover {
 nav .personal-logo h4 {
   font-family: Poppins;
   font-size: 1.5rem;
-  color: rgb(255, 255, 255);
+  color: var(--navLogoColor);
   margin: 0;
 }
 
@@ -210,19 +268,13 @@ nav .personal-logo p {
 }
 
 nav .theme-button {
-  background-color: rgb(249, 251, 255);
   width: 36px;
   height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 3px;
-  padding: 10px;
   cursor: pointer;
-  -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
-  box-shadow: 0 1px 1px 0 rgba(27, 27, 27, 0.1);
-  transition: 0.2s ease-in-out;
   background: var(--navThemeBackground);
   border-radius: 10px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
@@ -249,7 +301,7 @@ nav .theme-button:hover {
 }
 
 nav .nav-links a {
-  color: rgb(250, 250, 250);
+  color: var(--navLinkColor);
   font-weight: 400;
   font-family: Roboto;
   font-size: 1.1;
@@ -322,11 +374,7 @@ footer p:last-child {
   margin-top: 15rem;
   width: 100%;
   background: var(--containerBackground);
-  /* border-top-left-radius: 3px;
-  border-top-right-radius: 3px; */
   border-radius: 3px;
-  /* box-shadow: 15px 15px 0 rgb(128, 172, 255), -15px 15px 0 rgb(128, 172, 255); */
-  /* padding: 0.5rem 0.5rem 5rem; */
   display: flex;
   flex-direction: column;
 }
@@ -342,10 +390,6 @@ footer p:last-child {
   line-height: 90px;
   color: rgb(255, 214, 119);
   text-align: center;
-  /* -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%),
-    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(103, 155, 253);
-  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 1px 0 rgb(0 0 0 / 10%),
-    10px 10px 1px 0 rgb(103, 155, 253), 20px 20px 1px 0 rgb(87, 146, 255); */
 }
 
 .description {
@@ -360,7 +404,7 @@ footer p:last-child {
 
 .description .header-info {
   align-self: center;
-  width: 50%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -376,7 +420,6 @@ footer p:last-child {
 }
 
 .description .header-info h3 {
-  /* text-align: center; */
   justify-self: flex-start;
   font-family: Inter;
   font-size: 4rem;
@@ -384,6 +427,19 @@ footer p:last-child {
   color: var(--h3Color);
   margin-bottom: 5rem;
   margin-top: 5rem;
+}
+
+.moreProjectsTitle {
+  text-align: center;
+  font-family: Inter;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--h2Color), rgba(255, 255, 255, 0.75));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1rem 0 0.5rem;
+  letter-spacing: 1px;
 }
 
 .description .header-info span {
@@ -396,30 +452,15 @@ footer p:last-child {
   line-height: 2rem;
   font-family: Inter;
   font-size: 2rem;
-  color: white;
+  color: var(--textColor);
   margin-bottom: 3rem;
 }
 
 .description p {
   font-size: 1.4rem;
   font-weight: 300;
-  color: white;
+  color: var(--textColor);
 }
-
-/* .projects-container {
-  align-self: center;
-  margin-top: 2rem;
-  width: 70%;
-  border-radius: 5px;
-} */
-/* .projects-container h2 {
-  font-size: 2rem;
-  font-family: Poppins;
-}
-.projects-container p {
-  font-size: 1.5rem;
-  padding-left: 10px;
-} */
 
 .featuredProjects {
   width: 100%;
@@ -427,26 +468,17 @@ footer p:last-child {
   flex-direction: column;
 }
 
-/* .featuredProjects .react-parallax .react-parallax-bgimage{
-  opacity: 0.6;
-} */
-
 .projects {
   align-self: center;
   width: 80%;
   list-style: none;
   display: flex;
   align-items: fl;
-
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
   overflow: hidden;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 5em; */
   margin-top: .5rem;
-  /* padding: 2rem; */
 }
 
 .text {
@@ -485,302 +517,55 @@ footer p:last-child {
   color: white;
 }
 
-/* Portfolio Projects Enhanced Styles */
+/* ─── Global Scrollbar ────────────────────────────────── */
 
-/* Highlight text styling */
-.highlight-text {
-  background: linear-gradient(135deg, var(--navLinksHover), #7e9eff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  position: relative;
+/* Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-.highlight-text::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(135deg, var(--navLinksHover), #7e9eff);
-  opacity: 0.3;
+::-webkit-scrollbar-track {
+  background: rgb(11, 18, 32);
 }
 
-/* Projects Stats Container */
-.projects-stats {
-  margin: 3rem 0;
+::-webkit-scrollbar-thumb {
+  background: rgba(91, 142, 240, 0.45);
+  border-radius: 10px;
+  transition: background 0.2s ease;
 }
 
-.stats-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background: rgba(var(--skillsContainerBackground), 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(99, 143, 246);
 }
 
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+::-webkit-scrollbar-corner {
+  background: rgb(11, 18, 32);
 }
 
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--navLinksHover);
-  line-height: 1;
-  margin-bottom: 0.5rem;
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(91, 142, 240, 0.45) rgb(11, 18, 32);
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  color: var(--textColor);
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 500;
+/* Light theme overrides */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: rgb(42, 72, 138);
 }
 
-.stat-divider {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3), transparent);
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
 }
 
-/* Section Header Styling */
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 4rem 0 3rem 0;
-  gap: 1rem;
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.65);
 }
 
-.section-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+[data-theme="light"] ::-webkit-scrollbar-corner {
+  background: rgb(42, 72, 138);
 }
 
-.section-title {
-  color: var(--h2Color);
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  white-space: nowrap;
-  position: relative;
-}
-
-.section-title::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 3px;
-  background: var(--navLinksHover);
-  border-radius: 2px;
-}
-
-/* More Projects Header Enhanced */
-.more-projects-header {
-  position: relative;
-  text-align: center;
-  margin: 6rem 0 4rem 0;
-  padding: 4rem 0;
-  overflow: hidden;
-}
-
-.mp-background-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 8rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.02);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  user-select: none;
-  z-index: 1;
-}
-
-.mp-content {
-  position: relative;
-  z-index: 2;
-}
-
-.mp-title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.mp-icon {
-  color: var(--navLinksHover);
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.mp-title {
-  font-size: 3.5rem;
-  color: var(--h2Color);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-  background: linear-gradient(135deg, var(--h2Color), rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.mp-subtitle {
-  font-size: 1.1rem;
-  color: var(--textColor);
-  opacity: 0.8;
-  font-style: italic;
-  margin: 0;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Enhanced Projects Grid - React 2022 Compatible */
-.projects-grid-enhanced {
-  align-self: center;
-  width: 80%;
-  list-style: none;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  overflow: hidden;
-  margin-top: 0.5rem;
-}
-
-/* Featured Projects Enhanced */
-.featuredProjects {
-  margin: 4rem 0;
-}
-
-/* Responsive Enhancements */
-@media (max-width: 768px) {
-  .stats-container {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem;
-  }
-
-  .stat-divider {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .section-header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .section-line {
-    width: 100px;
-    height: 1px;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-  }
-
-  .mp-background-text {
-    font-size: 4rem;
-  }
-
-  .mp-title {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-  }
-
-  .mp-title-container {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .projects-grid-enhanced {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-container {
-    padding: 1rem;
-  }
-
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-  }
-
-  .mp-title {
-    font-size: 2rem;
-  }
-
-  .mp-subtitle {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-
-  .section-title {
-    font-size: 1.2rem;
-  }
-}
-
-/* Enhanced hover effects for better interactivity */
-.stats-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.stat-item:hover .stat-number {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.mp-title-container:hover .mp-icon {
-  transform: rotate(360deg);
-  transition: transform 0.6s ease;
+[data-theme="light"] * {
+  scrollbar-color: rgba(255, 255, 255, 0.35) rgb(42, 72, 138);
 }

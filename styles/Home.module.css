@@ -312,19 +312,21 @@
   font-weight: 800;
   font-size: 4rem;
   color: #ffffff;
-  margin-bottom: -1rem;
+  margin-bottom: 0;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
 }
 .homeTitles p {
-  margin-top: 1.5rem;
-  margin-bottom: .5rem;
-  color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.78);
   font-family: Roboto Mono;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
 }
 .homeTitles span {
   color: rgb(255, 192, 74);
-  /* text-shadow: 3px 3px 0 rgb(136, 178, 255); */
 }
 .homeTitles b {
   color: rgb(225, 233, 255);
@@ -384,22 +386,25 @@
 
 .homeTitles button {
   background-color: var(--aboutButton);
-  padding: 1rem;
-  width: 120px;
+  padding: 0.75rem 1.8rem;
+  width: auto;
   text-align: center;
-  border-radius: 5px;
-  border: none;
-  margin-top: -1rem;
+  border-radius: 7px;
+  border: 1px solid rgba(91, 142, 240, 0.3);
   font-family: Inter;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   color: rgb(66, 132, 255);
   cursor: pointer;
-  /* border: 1px solid rgb(83, 143, 255); */
-  transition: 0.2s ease-in-out;
+  transition: 0.22s ease-in-out;
 }
 .homeTitles button:hover {
   background-color: var(--aboutButtonHover);
+  border-color: transparent;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 

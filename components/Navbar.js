@@ -1,14 +1,22 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import ThemeChanger from "./ThemeChanger";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import { useAuth } from "../context/authContext";
+import ThemeChanger from "./ThemeChanger";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState("relative");
   const { isLogged } = useAuth();
+  const { setTheme } = useTheme();
   const router = useRouter();
   const currentRoute = router.pathname;
+
+  useEffect(() => {
+    if (currentRoute !== "/") {
+      setTheme("dark");
+    }
+  }, [currentRoute, setTheme]);
 
   useEffect(() => {
     window.addEventListener("scroll", stickNavbar);
@@ -33,7 +41,7 @@ const Navbar = () => {
           <p>Full-Stack Developer</p>
         </div>
       </Link>
-      <ThemeChanger />
+      {currentRoute === "/" && <ThemeChanger />}
       <div className="nav-links">
         {isLogged ? (
           <Link href="/dashboard" legacyBehavior>
