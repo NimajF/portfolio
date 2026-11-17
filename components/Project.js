@@ -1,29 +1,34 @@
-import React, { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import InView from "./InView";
 import { item } from "../constants/motionConstants";
 import styles from "../styles/project.module.css";
+
 const Project = ({ project }) => {
+  const skillNames = project.skillsNames || [];
+
   return (
     <InView className={styles.projectCard} variants={item}>
       <div className={styles.projectImg}>
         <Image
           src={`${project.screenshot}`}
           alt={`Image of ${project.name} Project`}
-          height={150}
-          width={300}
+          fill
+          sizes="(max-width: 576px) 100vw, (max-width: 1400px) 50vw, 33vw"
+          style={{ objectFit: "cover" }}
           unoptimized={true}
         />
+        <div className={styles.imgOverlay} />
       </div>
       <div className={styles.projectContent}>
         <h2>{project.name}</h2>
         <p>{project.briefDescription}</p>
-        <div className={styles.languages}>
-          {project.skills.map((icon, idx) => (
-            <span key={idx}>{icon}</span>
-          ))}
-        </div>
+        {skillNames.length > 0 && (
+          <div className={styles.skillBubbles}>
+            {skillNames.map((skill, idx) => (
+              <span key={idx} className={styles.skillBubble}>{skill}</span>
+            ))}
+          </div>
+        )}
         <div className={styles.linkButtons}>
           <a
             href={`${project.repositoryURL}`}
@@ -44,6 +49,7 @@ const Project = ({ project }) => {
             </a>
           ) : (
             <button className={styles.inProgressButton} disabled>
+              <span className={styles.inProgressDotSmall} />
               In progress
             </button>
           )}

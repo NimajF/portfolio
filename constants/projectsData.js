@@ -12,8 +12,6 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiTailwindcss,
-  SiDjango,
-  SiPython,
 } from "react-icons/si";
 
 const projects = [
@@ -43,7 +41,7 @@ const projects = [
     ],
     completed: false,
     screenshot: "/coinfolio.PNG",
-    responsiveScreenshot: "/coinfolioPhone.png",
+    responsiveScreenshot: "/coinfolioMobile.png",
   },
   {
     name: "Dulce Victorina",
@@ -62,7 +60,7 @@ const projects = [
     completed: true,
     site: "https://dulcevictorina.vercel.app/",
     screenshot: "/cakeShop.PNG",
-    responsiveScreenshot: "/ResponsiveCakeProject.png",
+    responsiveScreenshot: "/cakeShopMobile.png",
   },
   {
     name: "Hay Postre",
@@ -82,7 +80,7 @@ const projects = [
     completed: true,
     site: "https://haypostre.vercel.app/",
     screenshot: "/haypostre.PNG",
-    responsiveScreenshot: "/haypostremovil.png",
+    responsiveScreenshot: "/haypostreMobile.png",
   },
   {
     name: "Umarket",
@@ -99,6 +97,15 @@ const projects = [
       <SiMongodb />,
       <SiNodedotjs />,
     ],
+    skillsNames: [
+      "html",
+      "css",
+      "bootstrap",
+      "javascript",
+      "nodejs",
+      "mongodb",
+      "express",
+    ],
     completed: true,
     screenshot: "/Homepage.png",
   },
@@ -113,7 +120,7 @@ const projects = [
     skillsNames: ["css", "reactjs", "react-router", "material-ui"],
     completed: true,
     screenshot: "/ColorsApp.png",
-    responsiveScreenshot: "/ResponsiveColorsProject.png",
+    responsiveScreenshot: "/colorsMobile.png",
   },
   {
     name: "YelpCamp",
@@ -143,7 +150,7 @@ const projects = [
     ],
     completed: true,
     screenshot: "/YelpCamp.PNG",
-    responsiveScreenshot: "/ResponsiveYelpCampProject.png",
+    responsiveScreenshot: "/yelpCampMobile.png",
   },
   // {
   //   name: "Social Job App",
@@ -163,10 +170,9 @@ const projects = [
     repositoryURL: "https://github.com/NimajF/portfolio",
     site: null,
     skills: [<SiCss3 />, <SiFramer />, <SiReact />, <SiNextdotjs />],
-    skillsNames: ["css", "reactjs", "nextjs"],
+    skillsNames: ["css", "reactjs", "nextjs", "framer-motion"],
     completed: false,
     screenshot: "/portfolio.PNG",
-    // responsiveScreenshot: "/ResponsiveCakeProject.png",
   },
   {
     name: "React NickGenerator",
@@ -174,6 +180,7 @@ const projects = [
     repositoryURL: "https://github.com/NimajF/react-nickgenerator",
     site: "https://nimajf.github.io/react-nickgenerator/",
     skills: [<SiCss3 />, <SiReact />],
+    skillsNames: ["css", "reactjs"],
     completed: true,
     screenshot: "/ReactNickGen.png",
   },
@@ -183,6 +190,7 @@ const projects = [
     repositoryURL: "https://github.com/NimajF/DadJokesAPP",
     site: "https://nimajf.github.io/DadJokesAPP/",
     skills: [<SiCss3 />, <SiReact />],
+    skillsNames: ["css", "reactjs"],
     completed: true,
     screenshot: "/DadJokes.png",
   },
@@ -193,6 +201,7 @@ const projects = [
     repositoryURL: "https://github.com/NimajF/Simple-React-TodoList",
     site: "https://nimajf.github.io/Simple-React-TodoList/",
     skills: [<SiCss3 />, <SiReact />, <SiMui />],
+    skillsNames: ["css", "reactjs", "material-ui"],
     completed: true,
     screenshot: "/ReactTodoList.png",
   },
@@ -203,6 +212,7 @@ const projects = [
     repositoryURL: "https://github.com/NimajF/NickGenerator",
     site: "https://nimajf.github.io/NickGenerator/",
     skills: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],
+    skillsNames: ["html", "css", "javascript"],
     completed: true,
     screenshot: "/NickGen.PNG",
   },
