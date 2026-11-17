@@ -35,3 +35,13 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Claude Code
+CLAUDE.md
+
+# Local design lab (never committed)
+/lab/
+/pages/lab/
+
+# .vscode
+/.vscode/
