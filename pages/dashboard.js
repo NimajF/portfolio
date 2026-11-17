@@ -115,8 +115,8 @@ const AdminDashboard = () => {
       const url = isEditing ? "/api/projects/update" : "/api/projects/create";
       const method = isEditing ? "PUT" : "POST";
       const body = isEditing
-        ? JSON.stringify({ id: editingProject.id, ...project })
-        : JSON.stringify(project);
+        ? JSON.stringify({ id: editingProject.id, ...finalProject })
+        : JSON.stringify(finalProject);
 
       const response = await fetch(url, {
         method,
