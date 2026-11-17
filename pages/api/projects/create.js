@@ -1,72 +1,58 @@
-import fs from 'fs';
-import path from 'path';
-import jwt from 'jsonwebtoken';
+import { createClient } from "@supabase/supabase-js";
+import { validateProjectForm, formToDbRow } from "../../../lib/normalizeProject";
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASESUPABASE_URL;
+const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASESUPABASE_PUBLISHABLE_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASESUPABASE_ANON_KEY;
 
-export default function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { adminToken } = req.cookies;
-
-  if (!adminToken) {
-    return res.status(401).json({ message: 'Token no encontrado' });
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "Token not found" });
   }
 
-  try {
-    jwt.verify(adminToken, JWT_SECRET);
-  } catch (error) {
-    return res.status(401).json({ message: 'Token inválido o expirado' });
+  const token = authHeader.split(" ")[1];
+
+  // Authenticated client with user token (respects RLS)
+  const userSupabase = createClient(supabaseUrl, supabaseAnonKey, {
+    global: { headers: { Authorization: `Bearer ${token}` } },
+  });
+
+  const {
+    data: { user },
+    error: authError,
+  } = await userSupabase.auth.getUser();
+
+  if (authError || !user) {
+    return res.status(401).json({ message: "Invalid or expired token" });
   }
 
-  const { title, description, technologies, liveUrl, githubUrl, image } = req.body;
-
-  if (!title || !description || !technologies) {
-    return res.status(400).json({ message: 'Campos requeridos: título, descripción y tecnologías' });
+  const validationError = validateProjectForm(req.body);
+  if (validationError) {
+    return res.status(400).json({ message: validationError });
   }
 
-  const newProject = {
-    id: Date.now(),
-    title,
-    description,
-    technologies: technologies.split(',').map(tech => tech.trim()),
-    liveUrl: liveUrl || '',
-    githubUrl: githubUrl || '',
-    image: image || '/images/project-placeholder.jpg',
-    createdAt: new Date().toISOString()
-  };
+  const { data, error } = await userSupabase
+    .from("projects")
+    .insert(formToDbRow(req.body))
+    .select()
+    .single();
 
-  // Save to JSON 
-  const projectsPath = path.join(process.cwd(), 'data', 'projects.json');
-  
-  try {
-    // Create directory if it doesn't exist
-    const dataDir = path.join(process.cwd(), 'data');
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir);
-    }
-
-    let projects = [];
-    if (fs.existsSync(projectsPath)) {
-      const data = fs.readFileSync(projectsPath, 'utf8');
-      projects = JSON.parse(data);
-    }
-    projects.push(newProject);
-
-    fs.writeFileSync(projectsPath, JSON.stringify(projects, null, 2));
-
-    res.status(201).json({ 
-      success: true, 
-      message: 'Proyecto creado exitosamente',
-      project: newProject 
-    });
-  } catch (error) {
-    console.error('Error guardando proyecto:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Error al guardar proyecto' 
-    });
+  if (error) {
+    console.error("Error creating project in Supabase:", error);
+    return res
+      .status(500)
+      .json({ success: false, message: "Error creating project" });
   }
+
+  res.status(201).json({
+    success: true,
+    message: "Project created successfully",
+    project: data,
+  });
 }

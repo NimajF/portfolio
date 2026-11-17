@@ -2,20 +2,22 @@ import FeaturedProject from "./FeaturedProject";
 import Project from "./Project";
 import InView from "./InView";
 import projects from "../constants/projectsData";
-import { Parallax } from "react-parallax";
 import {
   container,
   hiddenSubTitle,
   hiddenText,
 } from "../constants/motionConstants";
 
-const RepositoryList = () => {
-  const featuredProjects = projects.filter((project) =>
-    project.hasOwnProperty("responsiveScreenshot")
+const RepositoryList = ({ dbProjects = [] }) => {
+  // Admin-created projects (newest) first, then the static ones
+  const allProjects = [...dbProjects, ...projects];
+
+  const featuredProjects = allProjects.filter((project) =>
+    project.hasOwnProperty("responsiveScreenshot"),
   );
 
-  const moreProjects = projects.filter(
-    (project) => !("responsiveScreenshot" in project)
+  const moreProjects = allProjects.filter(
+    (project) => !("responsiveScreenshot" in project),
   );
 
   return (
@@ -46,22 +48,7 @@ const RepositoryList = () => {
         ))}
       </div> */}
       <InView variants={hiddenSubTitle}>
-        {/* <p>
-          <a href="https://www.freepik.com/free-psd/smartphone-mockup-front-view_13714308.htm#query=iphone%2013%20pro%20mockup&position=28&from_view=keyword">
-            Image by originalmockup
-          </a>{" "}
-          on Freepik
-        </p> */}
-        <h3
-          style={{
-            textAlign: "center",
-            fontSize: "3.5rem",
-            color: "white",
-            marginTop: "-2rem",
-          }}
-        >
-          More Projects
-        </h3>
+        <h3 className="moreProjectsTitle">More Projects</h3>
       </InView>
       <InView className="projects" variants={container}>
         {moreProjects.map((project, idx) => (

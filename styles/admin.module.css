@@ -343,253 +343,523 @@
   }
 }
 
-/* Dashboard Styles */
+/* ─── Dashboard tokens (independent of portfolio theme) ── */
 .dashboard {
-  padding: 1.5rem;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  --db-bg:           #07111e;
+  --db-surface:      #172843;
+  --db-surface-2:    #0c1e32;
+  --db-border:       rgba(255, 255, 255, 0.12);
+  --db-border-input: rgba(255, 255, 255, 0.2);
+  --db-border-hover: rgba(91, 142, 240, 0.6);
+  --db-text:         #f0f4ff;
+  --db-muted:        #8ea6cc;
+  --db-accent:       #5b8ef0;
+  --db-accent-bright:#7aaaff;
+  --db-accent-dim:   rgba(91, 142, 240, 0.18);
+  --db-green:        #4ade80;
+  --db-green-dim:    rgba(74, 222, 128, 0.12);
+  --db-red:          #f87171;
+  --db-red-dim:      rgba(248, 113, 113, 0.12);
+
+  padding: 2rem 2.5rem;
+  width: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: 1.8rem;
+  background: var(--db-bg);
 }
 
+/* ─── Header ──────────────────────────────────────────── */
 .dashboardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--glassBorder);
-  flex-shrink: 0;
-}
-
-.dashboardHeader h1 {
-  color: var(--h2Color);
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 0;
+  background: var(--db-surface);
+  border: 1px solid var(--db-border);
+  border-radius: 16px;
+  padding: 1.1rem 1.8rem;
 }
 
 .welcomeSection {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
 }
 
-.welcomeText {
-  color: var(--textColor);
-  opacity: 0.8;
+.adminBadge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--db-accent-bright);
+  background: var(--db-accent-dim);
+  border: 1px solid rgba(91, 142, 240, 0.3);
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+}
+
+.welcomeSection h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--db-text);
   margin: 0;
-  font-size: 0.9rem;
+  letter-spacing: -0.2px;
 }
 
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .logoutButton {
-  padding: 0.6rem 1.2rem;
-  background: var(--fakeTabBackground);
-  color: var(--textColor);
-  border: 1px solid var(--glassBorder);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--db-red);
+  border: 1px solid rgba(248, 113, 113, 0.25);
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
 }
 
 .logoutButton:hover {
-  background: var(--skillsTitle);
-  color: white;
-  border-color: var(--skillsTitle);
+  background: var(--db-red-dim);
+  border-color: rgba(248, 113, 113, 0.5);
 }
 
-/* Stats Row */
+/* ─── Stats Row ───────────────────────────────────────── */
 .statsRow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  flex-shrink: 0;
+  gap: 1rem;
 }
 
 .statCard {
-  background: var(--skillsContainerBackground);
-  backdrop-filter: blur(15px);
-  border: var(--glassBorder);
-  border-radius: 12px;
-  padding: 1.2rem;
+  background: var(--db-surface);
+  border: 1px solid var(--db-border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+/* ─── Gradient color variants ─────────────────────────── */
+.statBlue   { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important; border-color: transparent !important; }
+.statPurple { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%) !important; border-color: transparent !important; }
 
 .statCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
 }
+.statBlue:hover   { box-shadow: 0 10px 32px rgba(37,  99, 235, 0.45) !important; }
+.statPurple:hover { box-shadow: 0 10px 32px rgba(124, 58, 237, 0.45) !important; }
+
+/* White text/icon inside colored cards */
+.statBlue .statIcon,
+.statPurple .statIcon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.statBlue .statValue,
+.statPurple .statValue { color: #fff; }
+.statBlue .statLabel,
+.statPurple .statLabel { color: rgba(255, 255, 255, 0.72); }
 
 .statIcon {
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  background: rgba(var(--navLinksHover), 0.1);
-  color: var(--navLinksHover);
+  font-size: 1.1rem;
+  background: var(--db-accent-dim);
+  color: var(--db-accent);
+  flex-shrink: 0;
 }
 
 .statInfo {
   display: flex;
   flex-direction: column;
+  gap: 0.15rem;
 }
 
 .statValue {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: var(--h2Color);
-  line-height: 1.2;
+  color: var(--db-text);
+  line-height: 1;
+  font-family: Poppins, sans-serif;
 }
 
 .statLabel {
-  font-size: 0.8rem;
-  color: var(--textColor);
-  opacity: 0.7;
+  font-size: 0.7rem;
+  color: var(--db-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-/* Resume Cards in Stats Row */
+/* ─── Delete project button (bottom of form, editing only) */
+.deleteProjectBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  background: transparent;
+  color: var(--db-red);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteProjectBtn:hover {
+  background: var(--db-red-dim);
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+/* ─── Card overlay with edit + delete icons ───────────── */
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.deleteIconContainer {
+  background: rgba(248, 113, 113, 0.85);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 16px rgba(248, 113, 113, 0.4);
+  transform: scale(0.6);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover .deleteIconContainer {
+  transform: scale(1);
+}
+
+.deleteIconContainer:hover {
+  background: rgb(248, 113, 113);
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 22px rgba(248, 113, 113, 0.65);
+}
+
+/* ─── Cancel edit button (next to form title) ────────── */
+.cancelEditBtn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: var(--db-red);
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.cancelEditBtn:hover {
+  background: var(--db-red-dim);
+  border-color: rgba(248, 113, 113, 0.6);
+}
+
+/* ─── Section dot indicator ──────────────────────────── */
+.sectionDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── White variants for colored stat cards ───────────── */
+.statIconWhite {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.statLabelWhite {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.miniBtnWhite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.38rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  transition: all 0.18s ease;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0d1830;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.miniBtnWhite:hover:not(:disabled) {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.miniBtnWhite:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── CV Status & Filename ────────────────────────────── */
+.cvStatusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.cvDotActive {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(74, 222, 128, 0.7);
+}
+
+.cvDotEmpty {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.cvStatusText {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.cvFileName {
+  display: block;
+  font-size: 0.63rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+  margin-bottom: 0.45rem;
+}
+
+/* ─── Resume / CV Cards ────────────────────────────────── */
 .resumeStat {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .resumeActions {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
-  margin-top: 0.2rem;
+  flex-wrap: wrap;
 }
 
 .miniBtn {
-  padding: 0.3rem 0.6rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
   cursor: pointer;
-  transition: all 0.2s;
-  background: var(--fakeTabBackground);
-  color: var(--textColor);
-  border: 1px solid var(--glassBorder);
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.18s ease;
+  background: var(--db-surface-2);
+  color: var(--db-text);
+  border: 1px solid var(--db-border);
 }
 
 .miniBtn:hover:not(:disabled) {
-  background: var(--navLinksHover);
-  color: white;
+  background: var(--db-accent);
+  color: #0b1120;
+  border-color: transparent;
 }
 
 .miniBtn:disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
-/* Main Grid Layout */
+/* ─── Main Content Grid ───────────────────────────────── */
 .dashboardContent {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 340px 1fr;
   gap: 1.5rem;
   flex: 1;
   min-height: 0;
-  overflow: hidden;
+  align-items: start;
 }
 
-/* Compact Form */
-.projectForm {
-  background: var(--skillsContainerBackground);
-  backdrop-filter: blur(15px);
+/* ─── Panel base ──────────────────────────────────────── */
+.projectForm,
+.projectsListSection {
+  background: var(--db-surface);
   border-radius: 16px;
-  padding: 1.5rem;
-  border: var(--glassBorder);
+  border: 1px solid var(--db-border);
+}
+
+/* ─── Project Form Panel ──────────────────────────────── */
+.projectForm {
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
 
-.projectForm h2 {
-  color: var(--h3Color);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  flex-shrink: 0;
+.projectForm h2,
+.projectsListSection h2 {
+  color: #f0f4ff !important;
+  margin: 0 0 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--db-border);
+  -webkit-text-fill-color: #f0f4ff !important;
 }
 
 .projectForm form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .formGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
+  gap: 0.9rem;
 }
 
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .inputGroup label {
-  color: var(--textColor);
+  color: var(--db-muted);
   font-weight: 500;
-  font-size: 0.8rem;
-  margin-left: 2px;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .inputGroup input,
 .inputGroup textarea {
   width: 100%;
-  padding: 0.6rem;
-  border: 1px solid var(--glassBorder);
-  border-radius: 6px;
-  background: var(--fakeTabBackground);
-  color: var(--textColor);
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--db-border-input);
+  border-radius: 8px;
+  background: var(--db-surface-2);
+  color: var(--db-text);
   font-size: 0.85rem;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .inputGroup input:focus,
 .inputGroup textarea:focus {
   outline: none;
-  border-color: var(--navLinksHover);
-  background: rgba(var(--navBackground), 0.1);
+  border-color: var(--db-accent);
+  box-shadow: 0 0 0 3px var(--db-accent-dim);
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: var(--db-muted);
+  opacity: 0.6;
 }
 
 .inputGroup textarea {
   resize: none;
-  min-height: 80px;
+  min-height: 75px;
+  line-height: 1.5;
 }
 
+.uploadPreview {
+  margin-top: 0.35rem;
+  max-height: 200px;
+  width: auto;
+  border: 1px solid var(--db-border);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+
 .submitButton {
-  padding: 0.8rem;
-  background: var(--cvButtonBackground);
-  color: white;
+  padding: 0.75rem;
+  background: var(--db-accent);
+  color: #0b1120;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+  margin-top: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -597,98 +867,91 @@
 }
 
 .submitButton:hover:not(:disabled) {
-  background: var(--cvButtonHover);
+  background: #7da8ff;
   transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(99, 143, 246, 0.4);
+}
+
+.submitButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .message {
-  padding: 0.6rem;
-  border-radius: 6px;
-  text-align: center;
-  margin-top: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
   font-size: 0.8rem;
   font-weight: 500;
+  line-height: 1.4;
 }
 
-/* Projects Grid List */
+/* ─── Projects List Panel ─────────────────────────────── */
 .projectsListSection {
-  background: var(--skillsContainerBackground);
-  backdrop-filter: blur(15px);
-  border-radius: 16px;
-  padding: 1.5rem;
-  border: var(--glassBorder);
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
-.projectsListSection h2 {
-  color: var(--h3Color);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  flex-shrink: 0;
-}
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 1rem;
   overflow-y: auto;
-  padding-right: 0.5rem;
+  max-height: 62vh;
+  padding-right: 0.3rem;
 }
 
-/* Custom Scrollbar */
+/* ─── Scrollbars ──────────────────────────────────────── */
 .projectsGrid::-webkit-scrollbar,
 .projectForm::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 .projectsGrid::-webkit-scrollbar-track,
 .projectForm::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: transparent;
 }
 
 .projectsGrid::-webkit-scrollbar-thumb,
 .projectForm::-webkit-scrollbar-thumb {
-  background: var(--glassBorder);
+  background: var(--db-surface-2);
   border-radius: 10px;
 }
 
-/* Project Overlay */
+/* ─── Project Card ────────────────────────────────────── */
 .projectCard {
-  background: var(--fakeTabBackground);
-  border: 1px solid var(--glassBorder);
+  background: var(--db-surface-2);
+  border: 1px solid var(--db-border);
   border-radius: 10px;
-  padding: 0.8rem;
-  transition: all 0.3s ease;
+  padding: 0;
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
 }
 
 .projectCard:hover {
-  background: var(--navThemeBackground);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--db-border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .projectOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+  background: rgba(7, 12, 24, 0.8);
   backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   z-index: 10;
+  border-radius: 10px;
 }
 
 .projectCard:hover .projectOverlay {
@@ -696,76 +959,107 @@
 }
 
 .editIconContainer {
-  background: var(--cvButtonBackground);
-  color: white;
-  width: 50px;
-  height: 50px;
+  background: var(--db-accent);
+  color: #0b1120;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transform: scale(0.8);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgba(99, 143, 246, 0.5);
+  transform: scale(0.6);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
 }
 
 .projectCard:hover .editIconContainer {
   transform: scale(1);
 }
 
+.editIconContainer:hover {
+  background: #7aaaff;
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 22px rgba(99, 143, 246, 0.75);
+}
+
+.visitIconContainer {
+  background: rgba(52, 211, 153, 0.9);
+  color: #052e1a;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 16px rgba(52, 211, 153, 0.4);
+  transform: scale(0.6);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover .visitIconContainer {
+  transform: scale(1);
+}
+
+.visitIconContainer:hover {
+  background: rgb(52, 211, 153);
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 22px rgba(52, 211, 153, 0.65);
+}
+
 .projectImage {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.projectInfo {
+  padding: 0.6rem 0.9rem 0.7rem;
 }
 
 .projectInfo h3 {
-  color: var(--h2Color);
-  margin: 0 0 0.4rem 0;
-  font-size: 0.95rem;
+  color: var(--db-text);
+  margin: 0;
+  font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  position: relative;
-  z-index: 1;
 }
 
-.projectInfo p {
-  color: var(--textColor);
-  opacity: 0.8;
-  margin: 0 0 0.8rem 0;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  height: 2.8rem;
-  /* 2 lines approx */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  position: relative;
-  z-index: 1;
+/* Badge for read-only projects */
+.staticBadge {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--db-border);
+  border-radius: 4px;
+  color: var(--db-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
+
 
 .projectTech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
-  margin-bottom: 0.8rem;
-  height: 1.6rem;
-  overflow: hidden;
+  margin-bottom: 0.7rem;
 }
 
 .techTag {
-  background: rgba(255, 198, 66, 0.15);
-  color: var(--cvTitle);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.65rem;
-  font-weight: 500;
+  background: var(--db-accent-dim);
+  color: var(--db-accent);
+  padding: 0.18rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
   white-space: nowrap;
 }
 
@@ -778,64 +1072,64 @@
 .projectLinks a {
   flex: 1;
   text-align: center;
-  color: var(--navLinksHover);
+  color: var(--db-muted);
   text-decoration: none;
-  font-size: 0.75rem;
-  padding: 0.4rem;
-  background: rgba(var(--navLinksHover), 0.08);
-  border-radius: 4px;
-  transition: all 0.2s;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.38rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--db-border);
+  border-radius: 6px;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
 }
 
 .projectLinks a:hover {
-  background: rgba(var(--navLinksHover), 0.15);
+  background: var(--db-accent-dim);
+  border-color: rgba(99, 143, 246, 0.35);
+  color: var(--db-accent);
 }
 
-/* Success/Error styles reused */
+/* ─── Feedback messages ───────────────────────────────── */
 .success {
-  background: rgba(89, 129, 85, 0.2);
-  color: var(--featuredProjectVisitButton);
-  border: 1px solid rgba(89, 129, 85, 0.3);
+  background: var(--db-green-dim);
+  color: var(--db-green);
+  border: 1px solid rgba(74, 222, 128, 0.25);
 }
 
 .error {
-  background: rgba(233, 70, 70, 0.1);
-  color: var(--skillsTitle);
-  border: 1px solid rgba(233, 70, 70, 0.2);
+  background: var(--db-red-dim);
+  color: var(--db-red);
+  border: 1px solid rgba(248, 113, 113, 0.25);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .dashboard {
-    height: auto;
-    overflow-y: auto;
-    display: block;
-  }
-
+/* ─── Responsive ──────────────────────────────────────── */
+@media (max-width: 1100px) {
   .statsRow {
     grid-template-columns: 1fr 1fr;
   }
 
   .dashboardContent {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
-  .projectForm,
-  .projectsListSection {
+  .projectsGrid {
     max-height: none;
-    overflow: visible;
   }
 }
 
 @media (max-width: 768px) {
   .dashboard {
-    padding: 1rem;
+    padding: 1.2rem;
+    gap: 1.2rem;
   }
 
   .statsRow {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
   }
 
   .dashboardHeader {
@@ -843,6 +1137,14 @@
     align-items: flex-start;
     gap: 1rem;
   }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ...existing code... */
+@media (max-width: 480px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+}
